@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Zahratul Hayati</title>
+<title>Website Rahimah</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
@@ -210,4 +210,460 @@ section {
     margin: auto auto 18px;
     display: flex;
     align-items: center;
-    justify-content:
+    justify-content: center;
+    font-size: 42px;
+    border-radius: 25px;
+}
+
+.pink {background:#ffe1ed;}
+.purple {background:#eee3ff;}
+.yellow {background:#fff1ce;}
+.blue {background:#dff2ff;}
+.green {background:#e0f6e7;}
+
+.menu-card h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+    color: #805f87;
+}
+
+.menu-card p {
+    font-size: 14px;
+    color: #a493a7;
+}
+
+/* TUGAS */
+.tugas1,
+.tugas2,
+.tugas3 {
+    background: linear-gradient(135deg,#fff0f7,#f5edff);
+    display: none;
+}
+
+.tugas1:target,
+.tugas2:target,
+.tugas3:target {
+    display: block;
+}
+
+.form-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #d9c3dd40;
+}
+
+.form-container h3 {
+    text-align: center;
+    color: #c47ba8;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.form-description {
+    text-align: center;
+    color: #9c879f;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.google-form,
+.google-sheet {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background: #fff8fc;
+}
+
+.google-form {
+    height: 900px;
+}
+
+.google-sheet {
+    height: 750px;
+}
+
+.form-back {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form-back a {
+    display: inline-block;
+    background: #d98ab5;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.form-back a:hover {
+    background: #bc6e9b;
+}
+
+/* ABOUT */
+.about {
+    background: #fff0f7;
+    text-align: center;
+}
+
+.about-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    line-height: 1.9;
+    box-shadow: 0 8px 25px #eacfe455;
+}
+
+/* FOOTER */
+footer {
+    background: #eac8df;
+    text-align: center;
+    padding: 30px 15px;
+    color: #74577d;
+    font-weight: 800;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 7%;
+    }
+
+    .hero-image {
+        width: 220px;
+        height: 220px;
+        font-size: 100px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .form-container {
+        padding: 12px;
+    }
+
+    .google-form {
+        height: 950px;
+    }
+
+    .google-sheet {
+        height: 650px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">website saya</div>
+
+    <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Tentang</a></li>
+    </ul>
+</nav>
+
+<!-- BERANDA -->
+<header class="hero" id="home">
+    <div class="hero-text">
+        <div class="small-title">
+            ✨ Welcome to My Little World ✨
+        </div>
+
+        <h1>
+            Selamat Datang<br>
+            di <span>Website Saya!</span>
+        </h1>
+
+        <p>
+            Halo! Terima kasih sudah berkunjung.
+            Website ini dibuat untuk memperkenalkan diri
+            dan menampilkan berbagai kegiatan serta tugas saya. 🌷
+        </p>
+
+        <a href="#menu" class="btn">
+            Jelajahi Website ♡
+        </a>
+    </div>
+
+    <div class="hero-image">🌸</div>
+</header>
+
+<!-- MENU UTAMA -->
+<section id="menu">
+    <div class="section-title">
+        <h2>Mari Lihat Website Saya ♡</h2>
+        <p>Yuk, jelajahi berbagai menu yang tersedia!</p>
+    </div>
+
+    <div class="menu-grid">
+
+        <a href="biodata.html" class="menu-card">
+            <div class="menu-icon pink">👩🏻‍🎓</div>
+            <h3>Biodata</h3>
+            <p>Kenali saya lebih dekat.</p>
+        </a>
+
+        <a href="gallery.html" class="menu-card">
+            <div class="menu-icon purple">📸</div>
+            <h3>Gallery</h3>
+            <p>Kumpulan foto rumah.</p>
+        </a>
+
+        <a href="video.html" class="menu-card">
+            <div class="menu-icon yellow">🎬</div>
+            <h3>Video</h3>
+            <p>Video sekitar rumah.</p>
+        </a>
+
+        <a href="#tugas1" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas 1</h3>
+            <p>Formulir Kepuasan Pengguna DANA.</p>
+        </a>
+
+        <a href="#tugas2" class="menu-card">
+            <div class="menu-icon green">📝</div>
+            <h3>Tugas 2</h3>
+            <p>Kumpulan tugas kedua.</p>
+        </a>
+
+        <a href="#tugas3" class="menu-card">
+            <div class="menu-icon green">📋</div>
+            <h3>Tugas 3</h3>
+            <p>Google Form dan Google Sheets.</p>
+        </a>
+
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas 4</h3>
+            <p>Kumpulan tugas Empat.</p>
+        </a>
+
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas Akhir</h3>
+            <p>Kumpulan tugas Akhir.</p>
+        </a>
+
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Data</h3>
+            <p>Kumpulan data.</p>
+        </a>
+
+    </div>
+</section>
+
+<!-- TUGAS 1 -->
+<section class="tugas1" id="tugas1">
+    <div class="section-title">
+        <h2>♡ Tugas 1 - Google Form ♡</h2>
+        <p>Formulir Kepuasan Pengguna Dompet Digital DANA</p>
+    </div>
+
+    <div class="form-container">
+        <h3>Formulir Kepuasan Pengguna DANA</h3>
+
+        <p class="form-description">
+            Silakan isi formulir berikut sesuai dengan pengalaman
+            kamu sebagai pengguna dompet digital DANA.
+            Terima kasih atas partisipasinya! ♡
+        </p>
+
+        <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/16E8ItNW9GYCIG_LmXcetD3ov4DbkrI95I_YjbpsTI7U/viewform?embedded=true"
+            title="Formulir Kepuasan Pengguna DANA"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="#menu">♡ Kembali ke Menu</a>
+        </div>
+    </div>
+</section>
+
+<!-- TUGAS 2 -->
+<section class="tugas2" id="tugas2">
+    <div class="section-title">
+        <h2>♡ Tugas 2 - Google Sheets ♡</h2>
+        <p>Tampilan data dari Google Sheets</p>
+    </div>
+
+    <div class="form-container">
+        <h3>Data Tugas 2</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan data yang terhubung dari Google Sheets. ♡
+        </p>
+
+        <iframe
+            class="google-sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRvmsYKKDppFFciIHKThMoVyfLZfz5pyyDY9-zsB4F1KWhUEMYoMdCst-cPyn3iTWxI7wDRdKt-8_tO/pubhtml?widget=true&amp;headers=false"
+            title="Data Tugas 2"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="#menu">♡ Kembali ke Menu</a>
+        </div>
+    </div>
+</section>
+
+<!-- TUGAS 3 -->
+<section class="tugas3" id="tugas3">
+
+    <div class="section-title">
+        <h2>♡ Tugas 3 ♡</h2>
+        <p>Google Form, Google Sheets, dan Looker Studio</p>
+    </div>
+
+    <!-- GOOGLE FORM TUGAS 3 -->
+    <div class="form-container">
+
+        <h3>📝 Google Form Tugas 3</h3>
+
+        <p class="form-description">
+            Silakan isi formulir berikut sesuai petunjuk
+            yang tersedia. Terima kasih sudah berpartisipasi! ♡
+        </p>
+
+        <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSft2eNIP2hIOFHgjFL7GbKJxFkFMlbMm9tcn_8DiSmuOucWnw/viewform?embedded=true"
+            title="Google Form Tugas 3"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <br><br>
+
+    <!-- GOOGLE SHEETS TUGAS 3 -->
+    <div class="form-container">
+
+        <h3>📊 Google Sheets Tugas 3</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan data dari Google Sheets
+            untuk Tugas 3. ♡
+        </p>
+
+        <iframe
+            class="google-sheet"
+            src="https://docs.google.com/spreadsheets/d/1DYOBSILfvtuO7oR-8GW0yVuPo-1wmzdhnV_KfRg9FXo/preview"
+            title="Google Sheets Tugas 3"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="https://docs.google.com/spreadsheets/d/1DYOBSILfvtuO7oR-8GW0yVuPo-1wmzdhnV_KfRg9FXo/edit?usp=sharing"
+               target="_blank" rel="noopener">
+                Buka Google Sheets
+            </a>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- LOOKER STUDIO TUGAS 3 -->
+    <div class="form-container">
+
+        <h3>📈 Dashboard Tugas 3 - Looker Studio</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan dashboard laporan
+            dari Looker Studio. ♡
+        </p>
+
+        <iframe
+            width="100%"
+            height="750"
+            src="https://datastudio.google.com/embed/reporting/de73dff2-12e5-4bd4-8adb-3cb1e81a2d0a/page/vPHEG"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+
+        <div class="form-back">
+            <a href="https://datastudio.google.com/reporting/de73dff2-12e5-4bd4-8adb-3cb1e81a2d0a"
+               target="_blank" rel="noopener">
+                Buka Dashboard Looker Studio
+            </a>
+        </div>
+
+    </div>
+
+    <div class="form-back">
+        <a href="#menu">♡ Kembali ke Menu</a>
+    </div>
+
+</section>
+
+<!-- TENTANG WEBSITE -->
+<section class="about" id="about">
+    <div class="section-title">
+        <h2>A Little About This Website 🌷</h2>
+        <p>My Personal Website</p>
+    </div>
+
+    <div class="about-box">
+        <h3>♡ Selamat datang di situs web saya ♡</h3>
+
+        <p>
+            Website ini dibuat sebagai media untuk
+            memperkenalkan diri, serta menampilkan
+            berbagai hasil tugas dan dokumentasi pribadi.
+        </p>
+
+        <br>
+
+        <h2>Terima kasih telah mengunjungi website ini! 💗</h2>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>♡ Website Rahimah ♡</p>
+    <p>Made with Love 🌸</p>
+    <p>Keep Growing, Keep Shining! ✨</p>
+</footer>
+
+</body>
+</html>
