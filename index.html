@@ -20,274 +20,251 @@ body {
  color:#405743;
 }
 
-nav {
+header {
  background:white;
- padding:18px 7%;
- display:flex;
- justify-content:space-between;
- align-items:center;
- flex-wrap:wrap;
- gap:15px;
- position:sticky;
- top:0;
- z-index:10;
+ padding:20px;
+ text-align:center;
  box-shadow:0 3px 15px #526b5515;
 }
 
-.logo {
- font-size:22px;
- font-weight:bold;
+header h1 {
+ font-size:27px;
 }
 
-.menu {
- display:flex;
- gap:18px;
- flex-wrap:wrap;
-}
-
-.menu a {
- text-decoration:none;
- color:#526b55;
- font-weight:bold;
-}
-
-.menu a:hover {
- color:#a0b89b;
-}
-
-section {
- padding:65px 7%;
- scroll-margin-top:75px;
-}
-
-.home {
- text-align:center;
- padding:100px 20px;
- background:linear-gradient(135deg,#e9f0e2,#f7f8ef);
-}
-
-.home h1 {
- font-size:38px;
- margin-bottom:15px;
-}
-
-.home p {
- color:#879187;
- line-height:1.8;
-}
-
-button {
- background:#526b55;
- color:white;
- border:none;
- padding:12px 25px;
- border-radius:25px;
- margin-top:20px;
- cursor:pointer;
- font-weight:bold;
-}
-
-.judul {
- text-align:center;
- margin-bottom:35px;
-}
-
-.judul h2 {
- font-size:30px;
-}
-
-.judul p {
+header p {
  color:#879187;
  margin-top:8px;
 }
 
-.container {
- max-width:850px;
+section {
+ padding:35px 20px;
+}
+
+.home {
+ max-width:900px;
  margin:auto;
+ text-align:center;
+}
+
+.judul {
+ margin-bottom:30px;
+}
+
+.judul h2 {
+ font-size:28px;
+ margin-bottom:10px;
+}
+
+.judul p {
+ color:#879187;
+}
+
+/* MENU KOTAK */
+
+.menu-container {
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:20px;
+ max-width:750px;
+ margin:auto;
+}
+
+.menu-card {
+ background:white;
+ padding:30px 15px;
+ border-radius:22px;
+ text-align:center;
+ cursor:pointer;
+ box-shadow:0 5px 15px #526b5515;
+ transition:0.3s;
+ border:2px solid transparent;
+}
+
+.menu-card:hover {
+ transform:translateY(-5px);
+ border-color:#a9c4a2;
+}
+
+.menu-card .emoji {
+ font-size:50px;
+ margin-bottom:15px;
+}
+
+.menu-card h3 {
+ margin-bottom:10px;
+}
+
+.menu-card p {
+ color:#879187;
+ font-size:14px;
+ line-height:1.6;
+}
+
+.label {
+ display:inline-block;
+ background:#e9f0e2;
+ padding:7px 15px;
+ border-radius:20px;
+ margin-top:15px;
+ font-size:12px;
+ font-weight:bold;
+}
+
+/* HALAMAN TUGAS */
+
+.halaman {
+ display:none;
+ max-width:800px;
+ margin:25px auto;
  background:white;
  padding:30px;
+ border-radius:22px;
+ box-shadow:0 5px 20px #526b5515;
+}
+
+.halaman.aktif {
+ display:block;
+}
+
+.halaman h2 {
+ text-align:center;
+ margin-bottom:25px;
+}
+
+.kembali {
+ background:#526b55;
+ color:white;
+ border:none;
+ padding:12px 22px;
  border-radius:25px;
- box-shadow:0 8px 25px #526b5515;
+ cursor:pointer;
+ margin-bottom:25px;
+ font-weight:bold;
 }
 
 /* BIODATA */
 
-.foto-box {
- width:180px;
- height:180px;
- border-radius:50%;
- overflow:hidden;
- border:7px solid #dce8d6;
- margin:auto;
+.profil {
+ text-align:center;
 }
 
-.foto-box img {
- width:100%;
- height:100%;
+.profil img {
+ width:160px;
+ height:160px;
  object-fit:cover;
+ border-radius:50%;
+ border:7px solid #dce8d6;
 }
 
-.upload-btn {
+.upload {
  display:block;
  width:max-content;
- margin:18px auto;
- padding:12px 25px;
+ margin:15px auto;
+ padding:12px 20px;
  background:#526b55;
  color:white;
  border-radius:25px;
  cursor:pointer;
- font-weight:bold;
 }
 
-#uploadFoto,#uploadGaleri {
+input[type=file] {
  display:none;
 }
 
-.nama {
- text-align:center;
- font-size:27px;
-}
-
-.julukan {
- text-align:center;
- color:#98a995;
- margin-bottom:25px;
-}
-
-.data-box {
+.data {
  background:#f5f8f1;
  padding:20px;
- border-radius:20px;
-}
-
-.data-item {
- display:flex;
- gap:10px;
- padding:12px 5px;
- border-bottom:1px solid #dce7d7;
-}
-
-.data-item strong {
- width:190px;
- flex-shrink:0;
-}
-
-.data-item span {
- color:#788578;
-}
-
-.motto {
- background:#e9f0e2;
- padding:20px;
- border-radius:20px;
+ border-radius:15px;
+ text-align:left;
+ line-height:2.2;
  margin-top:20px;
- text-align:center;
- line-height:1.8;
 }
 
 /* TENTANG */
 
 .box {
  background:#f5f8f1;
- padding:23px;
- border-radius:20px;
- margin-bottom:18px;
-}
-
-.box h3 {
- margin-bottom:12px;
+ padding:20px;
+ border-radius:15px;
+ margin-bottom:15px;
+ line-height:1.8;
 }
 
 .box p {
  color:#788578;
- line-height:1.8;
 }
 
 /* HOBI */
 
 .hobi-container {
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
- gap:20px;
- max-width:1000px;
- margin:auto;
+ grid-template-columns:repeat(2,1fr);
+ gap:15px;
 }
 
-.hobi-card {
- background:white;
- padding:25px;
- border-radius:20px;
+.hobi {
+ background:#f5f8f1;
+ padding:20px;
+ border-radius:15px;
  text-align:center;
 }
 
-.emoji {
- font-size:50px;
- margin-bottom:15px;
-}
-
-.hobi-card p {
- color:#788578;
- line-height:1.7;
- margin-top:10px;
+.hobi .emoji {
+ font-size:40px;
 }
 
 /* GALERI */
 
 .galeri {
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
- gap:20px;
- max-width:1000px;
- margin:auto;
+ grid-template-columns:repeat(2,1fr);
+ gap:15px;
 }
 
 .foto {
- background:white;
- padding:12px;
- border-radius:20px;
+ background:#f5f8f1;
+ padding:10px;
+ border-radius:15px;
  text-align:center;
 }
 
 .foto img {
  width:100%;
- height:200px;
+ height:160px;
  object-fit:cover;
- border-radius:15px;
+ border-radius:10px;
 }
 
 .foto p {
- padding:12px;
+ padding:10px;
  font-weight:bold;
 }
 
 footer {
  background:#35483a;
  color:white;
- text-align:center;
  padding:25px;
+ text-align:center;
  line-height:2;
 }
 
-@media(max-width:600px) {
- nav {
-  flex-direction:column;
- }
- .menu {
-  justify-content:center;
+@media(max-width:500px) {
+ .menu-container {
+  grid-template-columns:repeat(2,1fr);
   gap:12px;
  }
- .home h1 {
-  font-size:28px;
+ .menu-card {
+  padding:22px 10px;
  }
- .data-item {
-  flex-direction:column;
-  gap:5px;
+ .menu-card .emoji {
+  font-size:40px;
  }
- .data-item strong {
-  width:100%;
+ .halaman {
+  padding:20px;
  }
- section {
-  padding:45px 15px;
+ .hobi-container,
+ .galeri {
+  grid-template-columns:1fr;
  }
 }
 </style>
@@ -295,209 +272,160 @@ footer {
 
 <body>
 
-<!-- MENU NAVIGASI -->
+<header>
+ <h1>🐼 Panda Little World 🌷</h1>
+ <p>Welcome to My Personal Website 💚</p>
+</header>
 
-<nav>
- <div class="logo">🐼 Panda Little World</div>
+<!-- HALAMAN AWAL -->
 
- <div class="menu">
-  <a href="#home">Home</a>
-  <a href="#biodata">Biodata</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#hobi">Hobi</a>
-  <a href="#galeri">Galeri</a>
- </div>
-</nav>
-
-<!-- HOME -->
-
-<section class="home" id="home">
- <h1>🐼 Welcome to Panda Little World 🌷</h1>
-
- <p>
- Selamat datang di website pribadi saya!<br>
- Tempat berbagi cerita, biodata, hobi,
- dan kenangan indah saya.
- </p>
-
- <button onclick="document.getElementById('biodata').scrollIntoView()">
- Kenali Saya 💚
- </button>
-</section>
-
-<!-- TUGAS 1: BIODATA -->
-
-<section id="biodata">
+<section id="home" class="home">
 
  <div class="judul">
-  <h2>🌷 Biodata Diri 🌷</h2>
-  <p>Kenali saya lebih dekat!</p>
+  <h2>🌸 Selamat Datang 🌸</h2>
+  <p>Silakan pilih kotak di bawah untuk melihat tugas saya!</p>
  </div>
 
- <div class="container">
+ <div class="menu-container">
 
-  <div class="foto-box">
-   <img id="fotoProfil"
-   src="https://placehold.co/300x300/e9f0e2/526b55?text=Foto+Saya"
-   alt="Foto Profil">
+  <div class="menu-card" onclick="buka('biodata')">
+   <div class="emoji">🌷</div>
+   <h3>Biodata Diri</h3>
+   <p>Kenali profil dan identitas diri saya.</p>
+   <span class="label">TUGAS 1</span>
   </div>
 
-  <label for="uploadFoto" class="upload-btn">
-   📸 Pilih Foto Saya
-  </label>
+  <div class="menu-card" onclick="buka('tentang')">
+   <div class="emoji">💗</div>
+   <h3>Tentang Saya</h3>
+   <p>Cerita tentang diri, keluarga, dan pendidikan.</p>
+   <span class="label">TUGAS 2</span>
+  </div>
 
+  <div class="menu-card" onclick="buka('hobi')">
+   <div class="emoji">🎵</div>
+   <h3>Hobi Saya</h3>
+   <p>Berbagai kegiatan yang saya sukai.</p>
+   <span class="label">TUGAS 3</span>
+  </div>
+
+  <div class="menu-card" onclick="buka('galeri')">
+   <div class="emoji">📸</div>
+   <h3>Galeri Foto</h3>
+   <p>Kumpulan foto dan kenangan indah saya.</p>
+   <span class="label">TUGAS 4</span>
+  </div>
+
+ </div>
+</section>
+
+<!-- TUGAS 1 -->
+
+<section id="biodata" class="halaman">
+ <button class="kembali" onclick="kembali()">← Kembali</button>
+
+ <h2>🌷 Biodata Diri 🌷</h2>
+
+ <div class="profil">
+  <img id="fotoProfil"
+  src="https://placehold.co/300x300/e9f0e2/526b55?text=Foto+Saya">
+
+  <label for="uploadFoto" class="upload">
+   📸 Pilih Foto
+  </label>
   <input type="file" id="uploadFoto" accept="image/*">
 
-  <h2 class="nama">Nama Lengkap Kamu</h2>
-  <p class="julukan">🌸 Welcome to My Personal Profile 🌸</p>
+  <h2>Nama Lengkap Kamu</h2>
+  <p>Welcome to My Personal Profile 💗</p>
+ </div>
 
-  <div class="data-box">
+ <div class="data">
+  <p><b>👩 Nama Lengkap:</b> Isi nama kamu</p>
+  <p><b>🎂 Tempat, Tanggal Lahir:</b> Isi data kamu</p>
+  <p><b>⚧ Jenis Kelamin:</b> Isi data kamu</p>
+  <p><b>🏡 Alamat:</b> Isi alamat kamu</p>
+  <p><b>🎓 Sekolah:</b> Isi sekolah kamu</p>
+  <p><b>💗 Hobi:</b> Isi hobi kamu</p>
+  <p><b>🌟 Cita-cita:</b> Isi cita-cita kamu</p>
+ </div>
 
-   <div class="data-item">
-    <strong>👩 Nama Lengkap</strong>
-    <span>Isi nama kamu</span>
-   </div>
-
-   <div class="data-item">
-    <strong>🎂 Tempat, Tanggal Lahir</strong>
-    <span>Isi tempat dan tanggal lahir</span>
-   </div>
-
-   <div class="data-item">
-    <strong>⚧ Jenis Kelamin</strong>
-    <span>Isi jenis kelamin</span>
-   </div>
-
-   <div class="data-item">
-    <strong>🏡 Alamat</strong>
-    <span>Isi alamat kamu</span>
-   </div>
-
-   <div class="data-item">
-    <strong>🎓 Sekolah</strong>
-    <span>Isi nama sekolah</span>
-   </div>
-
-   <div class="data-item">
-    <strong>💗 Hobi</strong>
-    <span>Isi hobi kamu</span>
-   </div>
-
-   <div class="data-item">
-    <strong>🌟 Cita-cita</strong>
-    <span>Isi cita-cita kamu</span>
-   </div>
-
-  </div>
-
-  <div class="motto">
-   🐼 "Jangan pernah berhenti bermimpi,
-   teruslah belajar dan menjadi versi terbaik
-   dari dirimu sendiri." 💚
-  </div>
-
+ <div class="box" style="text-align:center;margin-top:20px">
+  🐼 Jangan pernah berhenti bermimpi dan teruslah belajar! 💚
  </div>
 </section>
 
-<!-- TUGAS 2: TENTANG SAYA -->
+<!-- TUGAS 2 -->
 
-<section id="tentang">
+<section id="tentang" class="halaman">
+ <button class="kembali" onclick="kembali()">← Kembali</button>
 
- <div class="judul">
-  <h2>💗 Tentang Saya 💗</h2>
-  <p>Yuk, kenali cerita tentang diri saya!</p>
+ <h2>💗 Tentang Saya 💗</h2>
+
+ <div class="box">
+  <h3>🌸 Perkenalan Diri</h3>
+  <p>Halo semuanya! Perkenalkan, nama saya (Nama Kamu). Saya adalah seorang pelajar yang senang belajar dan mencoba hal-hal baru.</p>
  </div>
 
- <div class="container">
+ <div class="box">
+  <h3>🏡 Tentang Keluarga</h3>
+  <p>Saya memiliki keluarga yang sangat saya sayangi. Keluarga selalu memberikan dukungan dan semangat dalam kehidupan saya.</p>
+ </div>
 
-  <div class="box">
-   <h3>🌸 Perkenalan Diri</h3>
-   <p>
-    Halo semuanya! Perkenalkan, nama saya
-    (Nama Kamu). Saya adalah seorang pelajar
-    yang memiliki semangat untuk belajar
-    dan mencoba hal-hal baru.
-   </p>
-  </div>
+ <div class="box">
+  <h3>🎓 Tentang Pendidikan</h3>
+  <p>Saat ini saya bersekolah di (Nama Sekolah). Saya senang mempelajari berbagai hal baru, terutama teknologi dan kreativitas.</p>
+ </div>
 
-  <div class="box">
-   <h3>🏡 Tentang Keluarga</h3>
-   <p>
-    Saya memiliki keluarga yang sangat saya
-    sayangi. Keluarga selalu memberikan
-    dukungan dan semangat dalam kehidupan saya.
-   </p>
-  </div>
-
-  <div class="box">
-   <h3>🎓 Tentang Pendidikan</h3>
-   <p>
-    Saat ini saya bersekolah di (Nama Sekolah).
-    Saya senang mempelajari berbagai hal baru,
-    terutama tentang teknologi dan kreativitas.
-   </p>
-  </div>
-
-  <div class="box">
-   <h3>🌟 Harapan Saya</h3>
-   <p>
-    Saya berharap dapat meraih cita-cita,
-    membanggakan orang tua, dan menjadi
-    orang sukses di masa depan.
-   </p>
-  </div>
-
+ <div class="box">
+  <h3>🌟 Harapan Saya</h3>
+  <p>Saya berharap dapat meraih cita-cita, membanggakan orang tua, dan menjadi orang sukses di masa depan.</p>
  </div>
 </section>
 
-<!-- TUGAS 3: HOBI -->
+<!-- TUGAS 3 -->
 
-<section id="hobi">
+<section id="hobi" class="halaman">
+ <button class="kembali" onclick="kembali()">← Kembali</button>
 
- <div class="judul">
-  <h2>🎵 Hobi Saya 🎵</h2>
-  <p>Hal-hal yang saya sukai!</p>
- </div>
+ <h2>🎵 Hobi Saya 🎵</h2>
 
  <div class="hobi-container">
 
-  <div class="hobi-card">
+  <div class="hobi">
    <div class="emoji">📚</div>
    <h3>Membaca</h3>
-   <p>Saya suka membaca buku untuk menambah ilmu dan pengetahuan.</p>
+   <p>Saya suka membaca buku untuk menambah ilmu.</p>
   </div>
 
-  <div class="hobi-card">
+  <div class="hobi">
    <div class="emoji">🎵</div>
    <h3>Mendengarkan Musik</h3>
-   <p>Saya senang mendengarkan musik ketika sedang bersantai.</p>
+   <p>Saya senang mendengarkan musik saat bersantai.</p>
   </div>
 
-  <div class="hobi-card">
+  <div class="hobi">
    <div class="emoji">🍰</div>
    <h3>Memasak</h3>
-   <p>Saya suka mencoba membuat makanan dan minuman.</p>
+   <p>Saya suka mencoba membuat makanan.</p>
   </div>
 
-  <div class="hobi-card">
+  <div class="hobi">
    <div class="emoji">🌷</div>
    <h3>Jalan-jalan</h3>
-   <p>Saya senang mengunjungi tempat baru dan melihat pemandangan.</p>
+   <p>Saya senang mengunjungi tempat baru.</p>
   </div>
 
  </div>
 </section>
 
-<!-- TUGAS 4: GALERI -->
+<!-- TUGAS 4 -->
 
-<section id="galeri">
+<section id="galeri" class="halaman">
+ <button class="kembali" onclick="kembali()">← Kembali</button>
 
- <div class="judul">
-  <h2>📸 Galeri Foto Saya 📸</h2>
-  <p>Kumpulan foto dan kenangan indah saya!</p>
- </div>
+ <h2>📸 Galeri Foto Saya 📸</h2>
 
- <label for="uploadGaleri" class="upload-btn">
+ <label for="uploadGaleri" class="upload">
   📷 Tambahkan Foto
  </label>
 
@@ -506,48 +434,67 @@ footer {
  <div class="galeri" id="daftarGaleri">
 
   <div class="foto">
-   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Memory" alt="Kenangan">
+   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Memory">
    <p>🌷 Kenangan Indah</p>
   </div>
 
   <div class="foto">
-   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Friends" alt="Teman">
+   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Friends">
    <p>💗 Bersama Teman</p>
   </div>
 
   <div class="foto">
-   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+School" alt="Sekolah">
+   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+School">
    <p>🎓 Kenangan Sekolah</p>
   </div>
 
  </div>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
  <h3>🐼 Panda Little World 🐼</h3>
  <p>Made with Love 💚🎋</p>
- <p>Terima kasih sudah mengunjungi website saya!</p>
+ <p>Terima kasih sudah berkunjung!</p>
 </footer>
-
-<!-- JAVASCRIPT -->
 
 <script>
 
+// MEMBUKA HALAMAN TUGAS
+
+function buka(id) {
+ document.getElementById("home").style.display = "none";
+
+ document.querySelectorAll(".halaman").forEach(function(halaman) {
+  halaman.classList.remove("aktif");
+ });
+
+ document.getElementById(id).classList.add("aktif");
+
+ window.scrollTo(0,0);
+}
+
+// KEMBALI KE MENU
+
+function kembali() {
+ document.querySelectorAll(".halaman").forEach(function(halaman) {
+  halaman.classList.remove("aktif");
+ });
+
+ document.getElementById("home").style.display = "block";
+
+ window.scrollTo(0,0);
+}
+
 // UPLOAD FOTO PROFIL
 
-const uploadFoto = document.getElementById("uploadFoto");
-const fotoProfil = document.getElementById("fotoProfil");
-
-uploadFoto.addEventListener("change", function(event) {
- const file = event.target.files[0];
+document.getElementById("uploadFoto").addEventListener("change",function(e) {
+ const file = e.target.files[0];
 
  if(file && file.type.startsWith("image/")) {
   const reader = new FileReader();
 
-  reader.onload = function(e) {
-   fotoProfil.src = e.target.result;
+  reader.onload = function(event) {
+   document.getElementById("fotoProfil").src = event.target.result;
   };
 
   reader.readAsDataURL(file);
@@ -556,24 +503,18 @@ uploadFoto.addEventListener("change", function(event) {
 
 // UPLOAD GALERI
 
-const uploadGaleri = document.getElementById("uploadGaleri");
-const daftarGaleri = document.getElementById("daftarGaleri");
-
-uploadGaleri.addEventListener("change", function(event) {
- const files = Array.from(event.target.files);
-
- files.forEach(function(file) {
+document.getElementById("uploadGaleri").addEventListener("change",function(e) {
+ Array.from(e.target.files).forEach(function(file) {
   if(!file.type.startsWith("image/")) return;
 
   const reader = new FileReader();
 
-  reader.onload = function(e) {
+  reader.onload = function(event) {
    const div = document.createElement("div");
    div.className = "foto";
 
    const img = document.createElement("img");
-   img.src = e.target.result;
-   img.alt = "Foto saya";
+   img.src = event.target.result;
 
    const p = document.createElement("p");
    p.textContent = "💚 Foto Saya";
@@ -581,71 +522,16 @@ uploadGaleri.addEventListener("change", function(event) {
    div.appendChild(img);
    div.appendChild(p);
 
-   daftarGaleri.appendChild(div);
+   document.getElementById("daftarGaleri").appendChild(div);
   };
 
   reader.readAsDataURL(file);
  });
 
- uploadGaleri.value = "";
+ e.target.value = "";
 });
 
 </script>
 
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Biodata Diri</title>
-<style>
-body {
- font-family: Arial;
- background: #f0f5e9;
- color: #405743;
- padding: 30px;
-}
-.container {
- max-width: 600px;
- margin: auto;
- background: white;
- padding: 30px;
- border-radius: 20px;
- text-align: center;
-}
-img {
- width: 160px;
- height: 160px;
- border-radius: 50%;
- object-fit: cover;
-}
-.data {
- text-align: left;
- background: #f5f8f1;
- padding: 20px;
- border-radius: 15px;
- line-height: 2;
-}
-</style>
-</head>
-<body>
-<div class="container">
-<h1>🌷 Biodata Diri 🌷</h1>
-<img src="https://placehold.co/300x300/e9f0e2/526b55?text=Foto+Saya">
-<h2>Nama Lengkap Kamu</h2>
-<p>Welcome to My Profile 💗</p>
-<div class="data">
-<p><b>Nama:</b> Isi nama kamu</p>
-<p><b>Tempat, Tanggal Lahir:</b> Isi data kamu</p>
-<p><b>Jenis Kelamin:</b> Isi data kamu</p>
-<p><b>Alamat:</b> Isi alamat kamu</p>
-<p><b>Sekolah:</b> Isi sekolah kamu</p>
-<p><b>Hobi:</b> Isi hobi kamu</p>
-<p><b>Cita-cita:</b> Isi cita-cita kamu</p>
-</div>
-<p>🐼 Jangan pernah berhenti bermimpi! 💚</p>
-</div>
 </body>
 </html>
