@@ -239,6 +239,7 @@ footer {
 
  <div class="menu">
   <a onclick="bukaHalaman('beranda')" id="nav-beranda" class="active">Beranda</a>
+  <a onclick="bukaHalaman('profil')" id="nav-profil">Profil</a>
   <a onclick="bukaHalaman('tugas1')" id="nav-tugas1">Tugas 1</a>
   <a onclick="bukaHalaman('tugas2')" id="nav-tugas2">Tugas 2</a>
   <a onclick="bukaHalaman('tugas3')" id="nav-tugas3">Tugas 3</a>
@@ -256,24 +257,37 @@ footer {
   <p>
    Ini adalah website kumpulan tugas saya.
    <br>
-   Silakan pilih salah satu tugas di bawah
+   Silakan pilih salah satu menu di bawah
    untuk membukanya.
   </p>
  </div>
 
  <div class="judul">
-  <h2>📚 Daftar Tugas</h2>
-  <p>Pilih tugas yang ingin kamu lihat.</p>
+  <h2>📚 Menu Utama</h2>
+  <p>Pilih halaman yang ingin kamu lihat.</p>
  </div>
 
  <div class="tugas-container">
 
+  <!-- PROFIL -->
+
+  <div class="tugas-card" onclick="bukaHalaman('profil')">
+   <div class="icon">👤</div>
+   <h3>Profil Saya</h3>
+   <p>Informasi dan identitas pribadi saya.</p>
+   <span>Buka Profil →</span>
+  </div>
+
+  <!-- TUGAS 1 -->
+
   <div class="tugas-card" onclick="bukaHalaman('tugas1')">
    <div class="icon">🌷</div>
    <h3>Tugas 1</h3>
-   <p>Biodata pribadi, hobi, dan galeri foto.</p>
+   <p>Halaman untuk tugas pertama.</p>
    <span>Buka Tugas →</span>
   </div>
+
+  <!-- TUGAS 2 -->
 
   <div class="tugas-card" onclick="bukaHalaman('tugas2')">
    <div class="icon">💗</div>
@@ -282,12 +296,16 @@ footer {
    <span>Buka Tugas →</span>
   </div>
 
+  <!-- TUGAS 3 -->
+
   <div class="tugas-card" onclick="bukaHalaman('tugas3')">
    <div class="icon">🎀</div>
    <h3>Tugas 3</h3>
    <p>Halaman untuk tugas ketiga.</p>
    <span>Buka Tugas →</span>
   </div>
+
+  <!-- TUGAS 4 -->
 
   <div class="tugas-card" onclick="bukaHalaman('tugas4')">
    <div class="icon">📸</div>
@@ -300,48 +318,69 @@ footer {
 
 </main>
 
-<!-- HALAMAN TUGAS 1 -->
+<!-- HALAMAN PROFIL -->
 
-<section class="halaman" id="tugas1">
+<section class="halaman" id="profil">
+
  <div class="header-tugas">
-  <h1>🌷 Tugas 1</h1>
-  <p>Biodata pribadi, hobi, dan galeri foto.</p>
+  <h1>👤 Profil Saya</h1>
+  <p>Selamat datang di halaman profil pribadi saya.</p>
  </div>
 
  <div class="area-kosong"></div>
+
+</section>
+
+<!-- HALAMAN TUGAS 1 -->
+
+<section class="halaman" id="tugas1">
+
+ <div class="header-tugas">
+  <h1>🌷 Tugas 1</h1>
+  <p>Halaman tugas pertama.</p>
+ </div>
+
+ <div class="area-kosong"></div>
+
 </section>
 
 <!-- HALAMAN TUGAS 2 -->
 
 <section class="halaman" id="tugas2">
+
  <div class="header-tugas">
   <h1>💗 Tugas 2</h1>
   <p>Halaman tugas kedua.</p>
  </div>
 
  <div class="area-kosong"></div>
+
 </section>
 
 <!-- HALAMAN TUGAS 3 -->
 
 <section class="halaman" id="tugas3">
+
  <div class="header-tugas">
   <h1>🎀 Tugas 3</h1>
   <p>Halaman tugas ketiga.</p>
  </div>
 
  <div class="area-kosong"></div>
+
 </section>
 
 <!-- HALAMAN TUGAS 4 -->
 
 <section class="halaman" id="tugas4">
+
  <div class="header-tugas">
   <h1>📸 Tugas 4</h1>
   <p>Halaman tugas keempat.</p>
  </div>
 
  <div class="area-kosong"></div>
+
 </section>
 
 <!-- FOOTER -->
@@ -355,6 +394,7 @@ footer {
 <!-- JAVASCRIPT -->
 
 <script>
+
 function bukaHalaman(id) {
 
  document.getElementById("beranda").style.display = "none";
@@ -372,11 +412,12 @@ function bukaHalaman(id) {
  document.getElementById("nav-" + id).classList.add("active");
 
  window.scrollTo(0,0);
- 
+
  if(id === "beranda") {
   document.getElementById("beranda").style.display = "block";
  }
 }
+
 </script>
 
 </body>
