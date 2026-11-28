@@ -1,23 +1,213 @@
-
-<!-- GANTI TITLE -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Website Zahratul Hayati</title>
 
-<!-- GANTI LOGO NAVBAR -->
-<div class="logo">website Zahratul Hayati</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
-<!-- GANTI TEKS BERANDA -->
-<div class="small-title">
-    ✨ Welcome to My Little World ✨
-</div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-<h1>
-    Selamat Datang<br>
-    di <span>Website Zahratul Hayati!</span>
-</h1>
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #fff8fc;
+    color: #55475c;
+    overflow-x: hidden;
+}
 
-<!-- GANTI BAGIAN FOOTER -->
-<footer>
-    <p>♡ Website Zahratul Hayati ♡</p>
-    <p>Made with Love 🌸</p>
-    <p>Keep Growing, Keep Shining! ✨</p>
-</footer>
+body::before {
+    content: "✿";
+    position: fixed;
+    top: 100px;
+    left: 25px;
+    font-size: 90px;
+    color: #f8cce2;
+    opacity: .35;
+    z-index: -1;
+}
+
+body::after {
+    content: "✧";
+    position: fixed;
+    right: 35px;
+    bottom: 50px;
+    font-size: 100px;
+    color: #cbbcf5;
+    opacity: .4;
+    z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #eacfe455;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    color: #c47ba8;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #66566c;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    color: #d77eae;
+}
+
+/* HERO */
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: linear-gradient(135deg,#ffe5f0,#f2eaff,#fff5e8);
+}
+
+.hero-text {
+    max-width: 580px;
+}
+
+.small-title {
+    background: white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #c47ba8;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px,6vw,65px);
+    line-height: 1.15;
+    color: #74577d;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #df87b6;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 27px;
+    background: #d98ab5;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 7px 15px #d98ab555;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: #bc6e9b;
+}
+
+.hero-image {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+    box-shadow: 0 15px 35px #c9a9d455;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+}
+
+/* SECTION */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    color: #795e83;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #9c879f;
+}
+
+/* MENU CARD */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    gap: 25px;
+}
+
+.menu-card {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #66566c;
+    box-shadow: 0 8px 25px #d9c3dd40;
+    transition: .3s;
+    border: 2px solid transparent;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    border-color: #f3c6df;
+    box-shadow: 0 12px 30px #d9a9cb55;
+}
+
+.menu-icon {
+    width: 85px;
+    height: 85px;
+    margin: auto auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content:
