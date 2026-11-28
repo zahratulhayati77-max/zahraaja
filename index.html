@@ -1,103 +1,380 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biodata Zahratul Hayati</title>
+<title>Website Zahratul Hayati 🐼</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Nunito', sans-serif;
     background: #fafafa;
     color: #333;
-    padding: 30px 15px;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 750px;
+body::before {
+    content: "🐼";
+    position: fixed;
+    top: 100px;
+    left: 15px;
+    font-size: 75px;
+    opacity: .10;
+    z-index: -1;
+}
+
+body::after {
+    content: "🎋";
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    font-size: 75px;
+    opacity: .15;
+    z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #00000015;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 900;
+    color: #222;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    color: #888;
+}
+
+/* HERO */
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: linear-gradient(135deg,#eeeeee,#ffffff,#dedede);
+}
+
+.hero-text {
+    max-width: 580px;
+}
+
+.small-title {
+    background: white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #333;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px,6vw,65px);
+    line-height: 1.15;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #777;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 27px;
+    background: #222;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 7px 15px #00000030;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: #555;
+}
+
+.hero-image {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 160px;
+    box-shadow: 0 15px 35px #00000020;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+}
+
+/* SECTION */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    color: #222;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #888;
+}
+
+/* MENU */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    gap: 25px;
+}
+
+.menu-card {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 8px 25px #00000012;
+    transition: .3s;
+    border: 2px solid transparent;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    border-color: #aaa;
+    box-shadow: 0 12px 30px #00000020;
+}
+
+.menu-icon {
+    width: 85px;
+    height: 85px;
+    margin: auto auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    border-radius: 25px;
+}
+
+.pink {background:#fce4ec;}
+.purple {background:#eeeeee;}
+.yellow {background:#fff3cd;}
+.blue {background:#e3f2fd;}
+.green {background:#e8f5e9;}
+
+.menu-card h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.menu-card p {
+    font-size: 14px;
+    color: #999;
+}
+
+/* TUGAS */
+.tugas1,
+.tugas2,
+.tugas3 {
+    background: linear-gradient(135deg,#eeeeee,#ffffff);
+    display: none;
+}
+
+.tugas1:target,
+.tugas2:target,
+.tugas3:target {
+    display: block;
+}
+
+.form-container {
+    max-width: 1000px;
     margin: auto;
     background: white;
-    padding: 35px;
+    padding: 25px;
     border-radius: 25px;
     box-shadow: 0 8px 25px #00000015;
 }
 
-h1 {
+.form-container h3 {
     text-align: center;
+    color: #333;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
-.subtitle {
+.form-description {
     text-align: center;
     color: #888;
     margin-bottom: 25px;
-}
-
-.foto {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 75px;
-    margin: 20px auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-td {
-    padding: 13px 8px;
-    border-bottom: 1px solid #eee;
-}
-
-td:first-child {
-    font-weight: 800;
-    width: 38%;
-}
-
-h2 {
-    margin-top: 25px;
-    margin-bottom: 12px;
-}
-
-p {
     line-height: 1.8;
 }
 
-.btn {
-    display: block;
-    width: fit-content;
-    margin: 30px auto 0;
+.google-form,
+.google-sheet {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background: #fafafa;
+}
+
+.google-form {
+    height: 900px;
+}
+
+.google-sheet {
+    height: 750px;
+}
+
+.form-back {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form-back a {
+    display: inline-block;
     background: #222;
     color: white;
-    text-decoration: none;
     padding: 12px 25px;
+    text-decoration: none;
     border-radius: 30px;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.form-back a:hover {
+    background: #666;
+}
+
+/* ABOUT */
+.about {
+    background: #eeeeee;
+    text-align: center;
+}
+
+.about-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    line-height: 1.9;
+    box-shadow: 0 8px 25px #00000015;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    text-align: center;
+    padding: 30px 15px;
+    color: white;
     font-weight: 800;
 }
 
-@media(max-width:500px) {
-    .container {
-        padding: 20px;
+footer p {
+    margin: 5px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    td:first-child {
-        width: 40%;
+    .nav-menu {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 7%;
+    }
+
+    .hero-image {
+        width: 220px;
+        height: 220px;
+        font-size: 110px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .form-container {
+        padding: 12px;
+    }
+
+    .google-form {
+        height: 950px;
+    }
+
+    .google-sheet {
+        height: 650px;
     }
 }
 </style>
@@ -105,78 +382,306 @@ p {
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🐼 Zahratul Hayati</div>
 
-<h1>🐼 Biodata Saya</h1>
-<p class="subtitle">Perkenalan Diri Zahratul Hayati</p>
+    <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Tentang</a></li>
+    </ul>
+</nav>
 
-<div class="foto">🐼</div>
+<!-- BERANDA -->
+<header class="hero" id="home">
+    <div class="hero-text">
 
-<h2>Identitas Diri</h2>
+        <div class="small-title">
+            🐼 Welcome to My Panda World 🎋
+        </div>
 
-<table>
-<tr>
-<td>Nama Lengkap</td>
-<td>Zahratul Hayati</td>
-</tr>
+        <h1>
+            Selamat Datang<br>
+            di <span>Website Saya!</span>
+        </h1>
 
-<tr>
-<td>Tempat Lahir</td>
-<td>Isi tempat lahir</td>
-</tr>
+        <p>
+            Halo! Selamat datang di website pribadi saya.
+            Perkenalkan, nama saya Zahratul Hayati.
+            Website ini dibuat untuk memperkenalkan diri,
+            menampilkan berbagai kegiatan, dokumentasi,
+            serta tugas-tugas saya. 🐼
+        </p>
 
-<tr>
-<td>Tanggal Lahir</td>
-<td>Isi tanggal lahir</td>
-</tr>
+        <a href="#menu" class="btn">
+            Jelajahi Website ♡
+        </a>
+    </div>
 
-<tr>
-<td>Jenis Kelamin</td>
-<td>Isi jenis kelamin</td>
-</tr>
+    <div class="hero-image">🐼</div>
+</header>
 
-<tr>
-<td>Agama</td>
-<td>Isi agama</td>
-</tr>
+<!-- MENU UTAMA -->
+<section id="menu">
 
-<tr>
-<td>Alamat</td>
-<td>Isi alamat</td>
-</tr>
+    <div class="section-title">
+        <h2>🐼 Mari Jelajahi Website Saya</h2>
+        <p>Temukan berbagai menu dan kegiatan saya!</p>
+    </div>
 
-<tr>
-<td>Pendidikan</td>
-<td>Isi pendidikan</td>
-</tr>
+    <div class="menu-grid">
 
-<tr>
-<td>Hobi</td>
-<td>Isi hobi</td>
-</tr>
-</table>
+        <a href="biodata.html" class="menu-card">
+            <div class="menu-icon pink">👩🏻‍🎓</div>
+            <h3>Biodata</h3>
+            <p>Kenali saya lebih dekat.</p>
+        </a>
 
-<h2>♡ Tentang Saya</h2>
+        <a href="gallery.html" class="menu-card">
+            <div class="menu-icon purple">📸</div>
+            <h3>Gallery</h3>
+            <p>Kumpulan foto rumah.</p>
+        </a>
 
-<p>
-Halo! Perkenalkan nama saya Zahratul Hayati.
-Saya adalah seseorang yang senang belajar,
-mencoba hal-hal baru, dan mengembangkan kemampuan diri.
-Website ini merupakan salah satu media untuk
-memperkenalkan diri dan menampilkan hasil kegiatan
-serta tugas-tugas saya.
-</p>
+        <a href="video.html" class="menu-card">
+            <div class="menu-icon yellow">🎬</div>
+            <h3>Video</h3>
+            <p>Video sekitar rumah.</p>
+        </a>
 
-<h2>🎋 Motto Hidup</h2>
+        <a href="#tugas1" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas 1</h3>
+            <p>Formulir Kepuasan Pengguna DANA.</p>
+        </a>
 
-<p>
-Terus belajar, jangan mudah menyerah,
-dan jadilah versi terbaik dari diri sendiri.
-</p>
+        <a href="#tugas2" class="menu-card">
+            <div class="menu-icon green">📝</div>
+            <h3>Tugas 2</h3>
+            <p>Kumpulan tugas kedua.</p>
+        </a>
 
-<a href="index.html" class="btn">🐼 Kembali ke Beranda</a>
+        <a href="#tugas3" class="menu-card">
+            <div class="menu-icon green">📋</div>
+            <h3>Tugas 3</h3>
+            <p>Google Form dan Google Sheets.</p>
+        </a>
 
-</div>
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas 4</h3>
+            <p>Kumpulan tugas empat.</p>
+        </a>
+
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon pink">🐼</div>
+            <h3>Tugas Akhir</h3>
+            <p>Kumpulan tugas akhir.</p>
+        </a>
+
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon purple">📊</div>
+            <h3>Data</h3>
+            <p>Kumpulan data.</p>
+        </a>
+
+    </div>
+</section>
+
+<!-- TUGAS 1 -->
+<section class="tugas1" id="tugas1">
+
+    <div class="section-title">
+        <h2>🐼 Tugas 1 - Google Form</h2>
+        <p>Formulir Kepuasan Pengguna Dompet Digital DANA</p>
+    </div>
+
+    <div class="form-container">
+
+        <h3>Formulir Kepuasan Pengguna DANA</h3>
+
+        <p class="form-description">
+            Silakan isi formulir berikut sesuai dengan pengalaman
+            kamu sebagai pengguna dompet digital DANA.
+            Terima kasih atas partisipasinya! ♡
+        </p>
+
+        <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/16E8ItNW9GYCIG_LmXcetD3ov4DbkrI95I_YjbpsTI7U/viewform?embedded=true"
+            title="Formulir Kepuasan Pengguna DANA"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="#menu">🐼 Kembali ke Menu</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- TUGAS 2 -->
+<section class="tugas2" id="tugas2">
+
+    <div class="section-title">
+        <h2>🐼 Tugas 2 - Google Sheets</h2>
+        <p>Tampilan data dari Google Sheets</p>
+    </div>
+
+    <div class="form-container">
+
+        <h3>Data Tugas 2</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan data yang terhubung
+            dari Google Sheets. ♡
+        </p>
+
+        <iframe
+            class="google-sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRvmsYKKDppFFciIHKThMoVyfLZfz5pyyDY9-zsB4F1KWhUEMYoMdCst-cPyn3iTWxI7wDRdKt-8_tO/pubhtml?widget=true&amp;headers=false"
+            title="Data Tugas 2"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="#menu">🐼 Kembali ke Menu</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- TUGAS 3 -->
+<section class="tugas3" id="tugas3">
+
+    <div class="section-title">
+        <h2>🐼 Tugas 3</h2>
+        <p>Google Form, Google Sheets, dan Looker Studio</p>
+    </div>
+
+    <!-- GOOGLE FORM -->
+    <div class="form-container">
+
+        <h3>📝 Google Form Tugas 3</h3>
+
+        <p class="form-description">
+            Silakan isi formulir berikut sesuai petunjuk
+            yang tersedia. Terima kasih sudah berpartisipasi!
+        </p>
+
+        <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSft2eNIP2hIOFHgjFL7GbKJxFkFMlbMm9tcn_8DiSmuOucWnw/viewform?embedded=true"
+            title="Google Form Tugas 3"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+    <br><br>
+
+    <!-- GOOGLE SHEETS -->
+    <div class="form-container">
+
+        <h3>📊 Google Sheets Tugas 3</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan data dari Google Sheets
+            untuk Tugas 3. ♡
+        </p>
+
+        <iframe
+            class="google-sheet"
+            src="https://docs.google.com/spreadsheets/d/1DYOBSILfvtuO7oR-8GW0yVuPo-1wmzdhnV_KfRg9FXo/preview"
+            title="Google Sheets Tugas 3"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="https://docs.google.com/spreadsheets/d/1DYOBSILfvtuO7oR-8GW0yVuPo-1wmzdhnV_KfRg9FXo/edit?usp=sharing"
+               target="_blank" rel="noopener">
+                Buka Google Sheets
+            </a>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- LOOKER STUDIO -->
+    <div class="form-container">
+
+        <h3>📈 Dashboard Tugas 3 - Looker Studio</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan dashboard laporan
+            dari Looker Studio. ♡
+        </p>
+
+        <iframe
+            width="100%"
+            height="750"
+            src="https://datastudio.google.com/embed/reporting/de73dff2-12e5-4bd4-8adb-3cb1e81a2d0a/page/vPHEG"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+
+        <div class="form-back">
+            <a href="https://datastudio.google.com/reporting/de73dff2-12e5-4bd4-8adb-3cb1e81a2d0a"
+               target="_blank" rel="noopener">
+                Buka Dashboard Looker Studio
+            </a>
+        </div>
+
+    </div>
+
+    <div class="form-back">
+        <a href="#menu">🐼 Kembali ke Menu</a>
+    </div>
+
+</section>
+
+<!-- TENTANG WEBSITE -->
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>🐼 About Me</h2>
+        <p>My Personal Website</p>
+    </div>
+
+    <div class="about-box">
+
+        <h3>♡ Selamat Datang di Website Zahratul Hayati ♡</h3>
+
+        <p>
+            Halo semuanya! Nama saya Zahratul Hayati.
+            Website ini dibuat sebagai media untuk
+            memperkenalkan diri, menampilkan berbagai
+            hasil tugas, kegiatan, dan dokumentasi pribadi.
+        </p>
+
+        <br>
+
+        <h2>Terima Kasih Sudah Berkunjung! 🐼</h2>
+
+        <p>
+            Keep Growing, Keep Shining! 🎋
+        </p>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>🐼 Website Zahratul Hayati 🐼</p>
+    <p>Made with Love ♡</p>
+    <p>Keep Growing, Keep Shining! 🎋</p>
+
+</footer>
 
 </body>
 </html>
