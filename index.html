@@ -3,6 +3,602 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panda Little World</title>
+
+<style>
+* {
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ scroll-behavior:smooth;
+}
+
+body {
+ font-family:Arial,sans-serif;
+ background:#f0f5e9;
+ color:#405743;
+}
+
+nav {
+ background:white;
+ padding:18px 7%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:15px;
+ position:sticky;
+ top:0;
+ z-index:10;
+ box-shadow:0 3px 15px #526b5515;
+}
+
+.logo {
+ font-size:22px;
+ font-weight:bold;
+}
+
+.menu {
+ display:flex;
+ gap:18px;
+ flex-wrap:wrap;
+}
+
+.menu a {
+ text-decoration:none;
+ color:#526b55;
+ font-weight:bold;
+}
+
+.menu a:hover {
+ color:#a0b89b;
+}
+
+section {
+ padding:65px 7%;
+ scroll-margin-top:75px;
+}
+
+.home {
+ text-align:center;
+ padding:100px 20px;
+ background:linear-gradient(135deg,#e9f0e2,#f7f8ef);
+}
+
+.home h1 {
+ font-size:38px;
+ margin-bottom:15px;
+}
+
+.home p {
+ color:#879187;
+ line-height:1.8;
+}
+
+button {
+ background:#526b55;
+ color:white;
+ border:none;
+ padding:12px 25px;
+ border-radius:25px;
+ margin-top:20px;
+ cursor:pointer;
+ font-weight:bold;
+}
+
+.judul {
+ text-align:center;
+ margin-bottom:35px;
+}
+
+.judul h2 {
+ font-size:30px;
+}
+
+.judul p {
+ color:#879187;
+ margin-top:8px;
+}
+
+.container {
+ max-width:850px;
+ margin:auto;
+ background:white;
+ padding:30px;
+ border-radius:25px;
+ box-shadow:0 8px 25px #526b5515;
+}
+
+/* BIODATA */
+
+.foto-box {
+ width:180px;
+ height:180px;
+ border-radius:50%;
+ overflow:hidden;
+ border:7px solid #dce8d6;
+ margin:auto;
+}
+
+.foto-box img {
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.upload-btn {
+ display:block;
+ width:max-content;
+ margin:18px auto;
+ padding:12px 25px;
+ background:#526b55;
+ color:white;
+ border-radius:25px;
+ cursor:pointer;
+ font-weight:bold;
+}
+
+#uploadFoto,#uploadGaleri {
+ display:none;
+}
+
+.nama {
+ text-align:center;
+ font-size:27px;
+}
+
+.julukan {
+ text-align:center;
+ color:#98a995;
+ margin-bottom:25px;
+}
+
+.data-box {
+ background:#f5f8f1;
+ padding:20px;
+ border-radius:20px;
+}
+
+.data-item {
+ display:flex;
+ gap:10px;
+ padding:12px 5px;
+ border-bottom:1px solid #dce7d7;
+}
+
+.data-item strong {
+ width:190px;
+ flex-shrink:0;
+}
+
+.data-item span {
+ color:#788578;
+}
+
+.motto {
+ background:#e9f0e2;
+ padding:20px;
+ border-radius:20px;
+ margin-top:20px;
+ text-align:center;
+ line-height:1.8;
+}
+
+/* TENTANG */
+
+.box {
+ background:#f5f8f1;
+ padding:23px;
+ border-radius:20px;
+ margin-bottom:18px;
+}
+
+.box h3 {
+ margin-bottom:12px;
+}
+
+.box p {
+ color:#788578;
+ line-height:1.8;
+}
+
+/* HOBI */
+
+.hobi-container {
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+ gap:20px;
+ max-width:1000px;
+ margin:auto;
+}
+
+.hobi-card {
+ background:white;
+ padding:25px;
+ border-radius:20px;
+ text-align:center;
+}
+
+.emoji {
+ font-size:50px;
+ margin-bottom:15px;
+}
+
+.hobi-card p {
+ color:#788578;
+ line-height:1.7;
+ margin-top:10px;
+}
+
+/* GALERI */
+
+.galeri {
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:20px;
+ max-width:1000px;
+ margin:auto;
+}
+
+.foto {
+ background:white;
+ padding:12px;
+ border-radius:20px;
+ text-align:center;
+}
+
+.foto img {
+ width:100%;
+ height:200px;
+ object-fit:cover;
+ border-radius:15px;
+}
+
+.foto p {
+ padding:12px;
+ font-weight:bold;
+}
+
+footer {
+ background:#35483a;
+ color:white;
+ text-align:center;
+ padding:25px;
+ line-height:2;
+}
+
+@media(max-width:600px) {
+ nav {
+  flex-direction:column;
+ }
+ .menu {
+  justify-content:center;
+  gap:12px;
+ }
+ .home h1 {
+  font-size:28px;
+ }
+ .data-item {
+  flex-direction:column;
+  gap:5px;
+ }
+ .data-item strong {
+  width:100%;
+ }
+ section {
+  padding:45px 15px;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU NAVIGASI -->
+
+<nav>
+ <div class="logo">🐼 Panda Little World</div>
+
+ <div class="menu">
+  <a href="#home">Home</a>
+  <a href="#biodata">Biodata</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#hobi">Hobi</a>
+  <a href="#galeri">Galeri</a>
+ </div>
+</nav>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+ <h1>🐼 Welcome to Panda Little World 🌷</h1>
+
+ <p>
+ Selamat datang di website pribadi saya!<br>
+ Tempat berbagi cerita, biodata, hobi,
+ dan kenangan indah saya.
+ </p>
+
+ <button onclick="document.getElementById('biodata').scrollIntoView()">
+ Kenali Saya 💚
+ </button>
+</section>
+
+<!-- TUGAS 1: BIODATA -->
+
+<section id="biodata">
+
+ <div class="judul">
+  <h2>🌷 Biodata Diri 🌷</h2>
+  <p>Kenali saya lebih dekat!</p>
+ </div>
+
+ <div class="container">
+
+  <div class="foto-box">
+   <img id="fotoProfil"
+   src="https://placehold.co/300x300/e9f0e2/526b55?text=Foto+Saya"
+   alt="Foto Profil">
+  </div>
+
+  <label for="uploadFoto" class="upload-btn">
+   📸 Pilih Foto Saya
+  </label>
+
+  <input type="file" id="uploadFoto" accept="image/*">
+
+  <h2 class="nama">Nama Lengkap Kamu</h2>
+  <p class="julukan">🌸 Welcome to My Personal Profile 🌸</p>
+
+  <div class="data-box">
+
+   <div class="data-item">
+    <strong>👩 Nama Lengkap</strong>
+    <span>Isi nama kamu</span>
+   </div>
+
+   <div class="data-item">
+    <strong>🎂 Tempat, Tanggal Lahir</strong>
+    <span>Isi tempat dan tanggal lahir</span>
+   </div>
+
+   <div class="data-item">
+    <strong>⚧ Jenis Kelamin</strong>
+    <span>Isi jenis kelamin</span>
+   </div>
+
+   <div class="data-item">
+    <strong>🏡 Alamat</strong>
+    <span>Isi alamat kamu</span>
+   </div>
+
+   <div class="data-item">
+    <strong>🎓 Sekolah</strong>
+    <span>Isi nama sekolah</span>
+   </div>
+
+   <div class="data-item">
+    <strong>💗 Hobi</strong>
+    <span>Isi hobi kamu</span>
+   </div>
+
+   <div class="data-item">
+    <strong>🌟 Cita-cita</strong>
+    <span>Isi cita-cita kamu</span>
+   </div>
+
+  </div>
+
+  <div class="motto">
+   🐼 "Jangan pernah berhenti bermimpi,
+   teruslah belajar dan menjadi versi terbaik
+   dari dirimu sendiri." 💚
+  </div>
+
+ </div>
+</section>
+
+<!-- TUGAS 2: TENTANG SAYA -->
+
+<section id="tentang">
+
+ <div class="judul">
+  <h2>💗 Tentang Saya 💗</h2>
+  <p>Yuk, kenali cerita tentang diri saya!</p>
+ </div>
+
+ <div class="container">
+
+  <div class="box">
+   <h3>🌸 Perkenalan Diri</h3>
+   <p>
+    Halo semuanya! Perkenalkan, nama saya
+    (Nama Kamu). Saya adalah seorang pelajar
+    yang memiliki semangat untuk belajar
+    dan mencoba hal-hal baru.
+   </p>
+  </div>
+
+  <div class="box">
+   <h3>🏡 Tentang Keluarga</h3>
+   <p>
+    Saya memiliki keluarga yang sangat saya
+    sayangi. Keluarga selalu memberikan
+    dukungan dan semangat dalam kehidupan saya.
+   </p>
+  </div>
+
+  <div class="box">
+   <h3>🎓 Tentang Pendidikan</h3>
+   <p>
+    Saat ini saya bersekolah di (Nama Sekolah).
+    Saya senang mempelajari berbagai hal baru,
+    terutama tentang teknologi dan kreativitas.
+   </p>
+  </div>
+
+  <div class="box">
+   <h3>🌟 Harapan Saya</h3>
+   <p>
+    Saya berharap dapat meraih cita-cita,
+    membanggakan orang tua, dan menjadi
+    orang sukses di masa depan.
+   </p>
+  </div>
+
+ </div>
+</section>
+
+<!-- TUGAS 3: HOBI -->
+
+<section id="hobi">
+
+ <div class="judul">
+  <h2>🎵 Hobi Saya 🎵</h2>
+  <p>Hal-hal yang saya sukai!</p>
+ </div>
+
+ <div class="hobi-container">
+
+  <div class="hobi-card">
+   <div class="emoji">📚</div>
+   <h3>Membaca</h3>
+   <p>Saya suka membaca buku untuk menambah ilmu dan pengetahuan.</p>
+  </div>
+
+  <div class="hobi-card">
+   <div class="emoji">🎵</div>
+   <h3>Mendengarkan Musik</h3>
+   <p>Saya senang mendengarkan musik ketika sedang bersantai.</p>
+  </div>
+
+  <div class="hobi-card">
+   <div class="emoji">🍰</div>
+   <h3>Memasak</h3>
+   <p>Saya suka mencoba membuat makanan dan minuman.</p>
+  </div>
+
+  <div class="hobi-card">
+   <div class="emoji">🌷</div>
+   <h3>Jalan-jalan</h3>
+   <p>Saya senang mengunjungi tempat baru dan melihat pemandangan.</p>
+  </div>
+
+ </div>
+</section>
+
+<!-- TUGAS 4: GALERI -->
+
+<section id="galeri">
+
+ <div class="judul">
+  <h2>📸 Galeri Foto Saya 📸</h2>
+  <p>Kumpulan foto dan kenangan indah saya!</p>
+ </div>
+
+ <label for="uploadGaleri" class="upload-btn">
+  📷 Tambahkan Foto
+ </label>
+
+ <input type="file" id="uploadGaleri" accept="image/*" multiple>
+
+ <div class="galeri" id="daftarGaleri">
+
+  <div class="foto">
+   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Memory" alt="Kenangan">
+   <p>🌷 Kenangan Indah</p>
+  </div>
+
+  <div class="foto">
+   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Friends" alt="Teman">
+   <p>💗 Bersama Teman</p>
+  </div>
+
+  <div class="foto">
+   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+School" alt="Sekolah">
+   <p>🎓 Kenangan Sekolah</p>
+  </div>
+
+ </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+ <h3>🐼 Panda Little World 🐼</h3>
+ <p>Made with Love 💚🎋</p>
+ <p>Terima kasih sudah mengunjungi website saya!</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// UPLOAD FOTO PROFIL
+
+const uploadFoto = document.getElementById("uploadFoto");
+const fotoProfil = document.getElementById("fotoProfil");
+
+uploadFoto.addEventListener("change", function(event) {
+ const file = event.target.files[0];
+
+ if(file && file.type.startsWith("image/")) {
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+   fotoProfil.src = e.target.result;
+  };
+
+  reader.readAsDataURL(file);
+ }
+});
+
+// UPLOAD GALERI
+
+const uploadGaleri = document.getElementById("uploadGaleri");
+const daftarGaleri = document.getElementById("daftarGaleri");
+
+uploadGaleri.addEventListener("change", function(event) {
+ const files = Array.from(event.target.files);
+
+ files.forEach(function(file) {
+  if(!file.type.startsWith("image/")) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+   const div = document.createElement("div");
+   div.className = "foto";
+
+   const img = document.createElement("img");
+   img.src = e.target.result;
+   img.alt = "Foto saya";
+
+   const p = document.createElement("p");
+   p.textContent = "💚 Foto Saya";
+
+   div.appendChild(img);
+   div.appendChild(p);
+
+   daftarGaleri.appendChild(div);
+  };
+
+  reader.readAsDataURL(file);
+ });
+
+ uploadGaleri.value = "";
+});
+
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
 <title>Biodata Diri</title>
 <style>
 body {
