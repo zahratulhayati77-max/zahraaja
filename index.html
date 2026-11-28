@@ -16,96 +16,140 @@
 
 body {
  font-family:Arial,sans-serif;
- background:#f0f5e9;
+ background:#f4f7ef;
  color:#405743;
 }
 
-header {
+/* NAVBAR */
+
+nav {
  background:white;
- padding:20px;
- text-align:center;
+ padding:18px 7%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:15px;
  box-shadow:0 3px 15px #526b5515;
+ position:sticky;
+ top:0;
+ z-index:10;
 }
 
-header h1 {
- font-size:27px;
+.logo {
+ font-size:21px;
+ font-weight:bold;
 }
 
-header p {
- color:#879187;
- margin-top:8px;
+.menu {
+ display:flex;
+ gap:20px;
+ flex-wrap:wrap;
 }
 
-section {
- padding:35px 20px;
+.menu a {
+ text-decoration:none;
+ color:#526b55;
+ font-weight:bold;
+ font-size:14px;
+ cursor:pointer;
 }
 
-.home {
- max-width:900px;
+.menu a:hover,
+.menu a.active {
+ color:#a0b89b;
+}
+
+/* BERANDA */
+
+#beranda {
+ max-width:1050px;
  margin:auto;
- text-align:center;
+ padding:65px 25px;
 }
+
+.welcome {
+ background:linear-gradient(135deg,#e5efdf,#f8f9f1);
+ padding:55px 25px;
+ border-radius:25px;
+ text-align:center;
+ margin-bottom:40px;
+}
+
+.welcome .panda {
+ font-size:55px;
+}
+
+.welcome h1 {
+ font-size:35px;
+ margin:15px 0;
+}
+
+.welcome p {
+ color:#879187;
+ line-height:1.8;
+}
+
+/* KOTAK TUGAS */
 
 .judul {
- margin-bottom:30px;
+ text-align:center;
+ margin-bottom:25px;
 }
 
 .judul h2 {
- font-size:28px;
- margin-bottom:10px;
+ font-size:27px;
+ margin-bottom:8px;
 }
 
 .judul p {
  color:#879187;
 }
 
-/* MENU KOTAK */
-
-.menu-container {
+.tugas-container {
  display:grid;
  grid-template-columns:repeat(2,1fr);
  gap:20px;
- max-width:750px;
- margin:auto;
 }
 
-.menu-card {
+.tugas-card {
  background:white;
- padding:30px 15px;
- border-radius:22px;
- text-align:center;
- cursor:pointer;
- box-shadow:0 5px 15px #526b5515;
+ padding:25px;
+ border-radius:20px;
+ text-decoration:none;
+ color:#405743;
+ box-shadow:0 5px 18px #526b5510;
  transition:0.3s;
- border:2px solid transparent;
+ cursor:pointer;
+ border:1px solid #e7eee2;
 }
 
-.menu-card:hover {
+.tugas-card:hover {
  transform:translateY(-5px);
- border-color:#a9c4a2;
+ box-shadow:0 8px 20px #526b5520;
 }
 
-.menu-card .emoji {
- font-size:50px;
+.tugas-card .icon {
+ font-size:38px;
  margin-bottom:15px;
 }
 
-.menu-card h3 {
+.tugas-card h3 {
  margin-bottom:10px;
 }
 
-.menu-card p {
+.tugas-card p {
  color:#879187;
  font-size:14px;
- line-height:1.6;
+ line-height:1.7;
 }
 
-.label {
+.tugas-card span {
  display:inline-block;
- background:#e9f0e2;
- padding:7px 15px;
- border-radius:20px;
  margin-top:15px;
+ background:#e9f0e2;
+ padding:8px 15px;
+ border-radius:20px;
  font-size:12px;
  font-weight:bold;
 }
@@ -114,157 +158,73 @@ section {
 
 .halaman {
  display:none;
- max-width:800px;
- margin:25px auto;
- background:white;
- padding:30px;
- border-radius:22px;
- box-shadow:0 5px 20px #526b5515;
+ max-width:1000px;
+ min-height:450px;
+ margin:40px auto;
+ padding:30px 25px;
 }
 
 .halaman.aktif {
  display:block;
 }
 
-.halaman h2 {
- text-align:center;
- margin-bottom:25px;
+.header-tugas {
+ background:white;
+ padding:30px;
+ border-radius:20px;
+ box-shadow:0 5px 15px #526b5510;
 }
 
-.kembali {
- background:#526b55;
- color:white;
- border:none;
- padding:12px 22px;
- border-radius:25px;
- cursor:pointer;
- margin-bottom:25px;
- font-weight:bold;
+.header-tugas h1 {
+ margin-bottom:12px;
 }
 
-/* BIODATA */
-
-.profil {
- text-align:center;
+.header-tugas p {
+ color:#879187;
+ line-height:1.7;
 }
 
-.profil img {
- width:160px;
- height:160px;
- object-fit:cover;
- border-radius:50%;
- border:7px solid #dce8d6;
-}
-
-.upload {
- display:block;
- width:max-content;
- margin:15px auto;
- padding:12px 20px;
- background:#526b55;
- color:white;
- border-radius:25px;
- cursor:pointer;
-}
-
-input[type=file] {
- display:none;
-}
-
-.data {
- background:#f5f8f1;
- padding:20px;
- border-radius:15px;
- text-align:left;
- line-height:2.2;
+.area-kosong {
+ background:white;
+ min-height:280px;
  margin-top:20px;
+ border-radius:20px;
+ border:1px solid #e5ebdf;
 }
 
-/* TENTANG */
-
-.box {
- background:#f5f8f1;
- padding:20px;
- border-radius:15px;
- margin-bottom:15px;
- line-height:1.8;
-}
-
-.box p {
- color:#788578;
-}
-
-/* HOBI */
-
-.hobi-container {
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:15px;
-}
-
-.hobi {
- background:#f5f8f1;
- padding:20px;
- border-radius:15px;
- text-align:center;
-}
-
-.hobi .emoji {
- font-size:40px;
-}
-
-/* GALERI */
-
-.galeri {
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:15px;
-}
-
-.foto {
- background:#f5f8f1;
- padding:10px;
- border-radius:15px;
- text-align:center;
-}
-
-.foto img {
- width:100%;
- height:160px;
- object-fit:cover;
- border-radius:10px;
-}
-
-.foto p {
- padding:10px;
- font-weight:bold;
-}
+/* FOOTER */
 
 footer {
  background:#35483a;
  color:white;
- padding:25px;
  text-align:center;
+ padding:25px;
  line-height:2;
+ margin-top:40px;
 }
 
-@media(max-width:500px) {
- .menu-container {
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+/* RESPONSIVE */
+
+@media(max-width:600px) {
+ nav {
+  flex-direction:column;
  }
- .menu-card {
-  padding:22px 10px;
+
+ .menu {
+  justify-content:center;
+  gap:14px;
  }
- .menu-card .emoji {
-  font-size:40px;
+
+ .welcome h1 {
+  font-size:26px;
  }
- .halaman {
-  padding:20px;
- }
- .hobi-container,
- .galeri {
+
+ .tugas-container {
   grid-template-columns:1fr;
+ }
+
+ .halaman {
+  padding:20px 15px;
  }
 }
 </style>
@@ -272,265 +232,151 @@ footer {
 
 <body>
 
-<header>
- <h1>🐼 Panda Little World 🌷</h1>
- <p>Welcome to My Personal Website 💚</p>
-</header>
+<!-- NAVBAR -->
 
-<!-- HALAMAN AWAL -->
+<nav>
+ <div class="logo">🐼 Panda Little World</div>
 
-<section id="home" class="home">
+ <div class="menu">
+  <a onclick="bukaHalaman('beranda')" id="nav-beranda" class="active">Beranda</a>
+  <a onclick="bukaHalaman('tugas1')" id="nav-tugas1">Tugas 1</a>
+  <a onclick="bukaHalaman('tugas2')" id="nav-tugas2">Tugas 2</a>
+  <a onclick="bukaHalaman('tugas3')" id="nav-tugas3">Tugas 3</a>
+  <a onclick="bukaHalaman('tugas4')" id="nav-tugas4">Tugas 4</a>
+ </div>
+</nav>
+
+<!-- BERANDA -->
+
+<main id="beranda">
+
+ <div class="welcome">
+  <div class="panda">🐼🌷</div>
+  <h1>Selamat Datang</h1>
+  <p>
+   Ini adalah website kumpulan tugas saya.
+   <br>
+   Silakan pilih salah satu tugas di bawah
+   untuk membukanya.
+  </p>
+ </div>
 
  <div class="judul">
-  <h2>🌸 Selamat Datang 🌸</h2>
-  <p>Silakan pilih kotak di bawah untuk melihat tugas saya!</p>
+  <h2>📚 Daftar Tugas</h2>
+  <p>Pilih tugas yang ingin kamu lihat.</p>
  </div>
 
- <div class="menu-container">
+ <div class="tugas-container">
 
-  <div class="menu-card" onclick="buka('biodata')">
-   <div class="emoji">🌷</div>
-   <h3>Biodata Diri</h3>
-   <p>Kenali profil dan identitas diri saya.</p>
-   <span class="label">TUGAS 1</span>
+  <div class="tugas-card" onclick="bukaHalaman('tugas1')">
+   <div class="icon">🌷</div>
+   <h3>Tugas 1</h3>
+   <p>Biodata pribadi, hobi, dan galeri foto.</p>
+   <span>Buka Tugas →</span>
   </div>
 
-  <div class="menu-card" onclick="buka('tentang')">
-   <div class="emoji">💗</div>
-   <h3>Tentang Saya</h3>
-   <p>Cerita tentang diri, keluarga, dan pendidikan.</p>
-   <span class="label">TUGAS 2</span>
+  <div class="tugas-card" onclick="bukaHalaman('tugas2')">
+   <div class="icon">💗</div>
+   <h3>Tugas 2</h3>
+   <p>Halaman untuk tugas kedua.</p>
+   <span>Buka Tugas →</span>
   </div>
 
-  <div class="menu-card" onclick="buka('hobi')">
-   <div class="emoji">🎵</div>
-   <h3>Hobi Saya</h3>
-   <p>Berbagai kegiatan yang saya sukai.</p>
-   <span class="label">TUGAS 3</span>
+  <div class="tugas-card" onclick="bukaHalaman('tugas3')">
+   <div class="icon">🎀</div>
+   <h3>Tugas 3</h3>
+   <p>Halaman untuk tugas ketiga.</p>
+   <span>Buka Tugas →</span>
   </div>
 
-  <div class="menu-card" onclick="buka('galeri')">
-   <div class="emoji">📸</div>
-   <h3>Galeri Foto</h3>
-   <p>Kumpulan foto dan kenangan indah saya.</p>
-   <span class="label">TUGAS 4</span>
+  <div class="tugas-card" onclick="bukaHalaman('tugas4')">
+   <div class="icon">📸</div>
+   <h3>Tugas 4</h3>
+   <p>Halaman untuk tugas keempat.</p>
+   <span>Buka Tugas →</span>
   </div>
 
  </div>
+
+</main>
+
+<!-- HALAMAN TUGAS 1 -->
+
+<section class="halaman" id="tugas1">
+ <div class="header-tugas">
+  <h1>🌷 Tugas 1</h1>
+  <p>Biodata pribadi, hobi, dan galeri foto.</p>
+ </div>
+
+ <div class="area-kosong"></div>
 </section>
 
-<!-- TUGAS 1 -->
+<!-- HALAMAN TUGAS 2 -->
 
-<section id="biodata" class="halaman">
- <button class="kembali" onclick="kembali()">← Kembali</button>
-
- <h2>🌷 Biodata Diri 🌷</h2>
-
- <div class="profil">
-  <img id="fotoProfil"
-  src="https://placehold.co/300x300/e9f0e2/526b55?text=Foto+Saya">
-
-  <label for="uploadFoto" class="upload">
-   📸 Pilih Foto
-  </label>
-  <input type="file" id="uploadFoto" accept="image/*">
-
-  <h2>Nama Lengkap Kamu</h2>
-  <p>Welcome to My Personal Profile 💗</p>
+<section class="halaman" id="tugas2">
+ <div class="header-tugas">
+  <h1>💗 Tugas 2</h1>
+  <p>Halaman tugas kedua.</p>
  </div>
 
- <div class="data">
-  <p><b>👩 Nama Lengkap:</b> Isi nama kamu</p>
-  <p><b>🎂 Tempat, Tanggal Lahir:</b> Isi data kamu</p>
-  <p><b>⚧ Jenis Kelamin:</b> Isi data kamu</p>
-  <p><b>🏡 Alamat:</b> Isi alamat kamu</p>
-  <p><b>🎓 Sekolah:</b> Isi sekolah kamu</p>
-  <p><b>💗 Hobi:</b> Isi hobi kamu</p>
-  <p><b>🌟 Cita-cita:</b> Isi cita-cita kamu</p>
- </div>
-
- <div class="box" style="text-align:center;margin-top:20px">
-  🐼 Jangan pernah berhenti bermimpi dan teruslah belajar! 💚
- </div>
+ <div class="area-kosong"></div>
 </section>
 
-<!-- TUGAS 2 -->
+<!-- HALAMAN TUGAS 3 -->
 
-<section id="tentang" class="halaman">
- <button class="kembali" onclick="kembali()">← Kembali</button>
-
- <h2>💗 Tentang Saya 💗</h2>
-
- <div class="box">
-  <h3>🌸 Perkenalan Diri</h3>
-  <p>Halo semuanya! Perkenalkan, nama saya (Nama Kamu). Saya adalah seorang pelajar yang senang belajar dan mencoba hal-hal baru.</p>
+<section class="halaman" id="tugas3">
+ <div class="header-tugas">
+  <h1>🎀 Tugas 3</h1>
+  <p>Halaman tugas ketiga.</p>
  </div>
 
- <div class="box">
-  <h3>🏡 Tentang Keluarga</h3>
-  <p>Saya memiliki keluarga yang sangat saya sayangi. Keluarga selalu memberikan dukungan dan semangat dalam kehidupan saya.</p>
- </div>
-
- <div class="box">
-  <h3>🎓 Tentang Pendidikan</h3>
-  <p>Saat ini saya bersekolah di (Nama Sekolah). Saya senang mempelajari berbagai hal baru, terutama teknologi dan kreativitas.</p>
- </div>
-
- <div class="box">
-  <h3>🌟 Harapan Saya</h3>
-  <p>Saya berharap dapat meraih cita-cita, membanggakan orang tua, dan menjadi orang sukses di masa depan.</p>
- </div>
+ <div class="area-kosong"></div>
 </section>
 
-<!-- TUGAS 3 -->
+<!-- HALAMAN TUGAS 4 -->
 
-<section id="hobi" class="halaman">
- <button class="kembali" onclick="kembali()">← Kembali</button>
-
- <h2>🎵 Hobi Saya 🎵</h2>
-
- <div class="hobi-container">
-
-  <div class="hobi">
-   <div class="emoji">📚</div>
-   <h3>Membaca</h3>
-   <p>Saya suka membaca buku untuk menambah ilmu.</p>
-  </div>
-
-  <div class="hobi">
-   <div class="emoji">🎵</div>
-   <h3>Mendengarkan Musik</h3>
-   <p>Saya senang mendengarkan musik saat bersantai.</p>
-  </div>
-
-  <div class="hobi">
-   <div class="emoji">🍰</div>
-   <h3>Memasak</h3>
-   <p>Saya suka mencoba membuat makanan.</p>
-  </div>
-
-  <div class="hobi">
-   <div class="emoji">🌷</div>
-   <h3>Jalan-jalan</h3>
-   <p>Saya senang mengunjungi tempat baru.</p>
-  </div>
-
+<section class="halaman" id="tugas4">
+ <div class="header-tugas">
+  <h1>📸 Tugas 4</h1>
+  <p>Halaman tugas keempat.</p>
  </div>
+
+ <div class="area-kosong"></div>
 </section>
 
-<!-- TUGAS 4 -->
-
-<section id="galeri" class="halaman">
- <button class="kembali" onclick="kembali()">← Kembali</button>
-
- <h2>📸 Galeri Foto Saya 📸</h2>
-
- <label for="uploadGaleri" class="upload">
-  📷 Tambahkan Foto
- </label>
-
- <input type="file" id="uploadGaleri" accept="image/*" multiple>
-
- <div class="galeri" id="daftarGaleri">
-
-  <div class="foto">
-   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Memory">
-   <p>🌷 Kenangan Indah</p>
-  </div>
-
-  <div class="foto">
-   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+Friends">
-   <p>💗 Bersama Teman</p>
-  </div>
-
-  <div class="foto">
-   <img src="https://placehold.co/400x300/e9f0e2/526b55?text=My+School">
-   <p>🎓 Kenangan Sekolah</p>
-  </div>
-
- </div>
-</section>
+<!-- FOOTER -->
 
 <footer>
- <h3>🐼 Panda Little World 🐼</h3>
- <p>Made with Love 💚🎋</p>
- <p>Terima kasih sudah berkunjung!</p>
+ <h3>🐼 Panda Little World</h3>
+ <p>Made with Love 💚</p>
+ <p>Terima kasih sudah mengunjungi website saya!</p>
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
+function bukaHalaman(id) {
 
-// MEMBUKA HALAMAN TUGAS
+ document.getElementById("beranda").style.display = "none";
 
-function buka(id) {
- document.getElementById("home").style.display = "none";
-
- document.querySelectorAll(".halaman").forEach(function(halaman) {
-  halaman.classList.remove("aktif");
+ document.querySelectorAll(".halaman").forEach(function(item) {
+  item.classList.remove("aktif");
  });
 
  document.getElementById(id).classList.add("aktif");
 
- window.scrollTo(0,0);
-}
-
-// KEMBALI KE MENU
-
-function kembali() {
- document.querySelectorAll(".halaman").forEach(function(halaman) {
-  halaman.classList.remove("aktif");
+ document.querySelectorAll(".menu a").forEach(function(link) {
+  link.classList.remove("active");
  });
 
- document.getElementById("home").style.display = "block";
+ document.getElementById("nav-" + id).classList.add("active");
 
  window.scrollTo(0,0);
-}
-
-// UPLOAD FOTO PROFIL
-
-document.getElementById("uploadFoto").addEventListener("change",function(e) {
- const file = e.target.files[0];
-
- if(file && file.type.startsWith("image/")) {
-  const reader = new FileReader();
-
-  reader.onload = function(event) {
-   document.getElementById("fotoProfil").src = event.target.result;
-  };
-
-  reader.readAsDataURL(file);
+ 
+ if(id === "beranda") {
+  document.getElementById("beranda").style.display = "block";
  }
-});
-
-// UPLOAD GALERI
-
-document.getElementById("uploadGaleri").addEventListener("change",function(e) {
- Array.from(e.target.files).forEach(function(file) {
-  if(!file.type.startsWith("image/")) return;
-
-  const reader = new FileReader();
-
-  reader.onload = function(event) {
-   const div = document.createElement("div");
-   div.className = "foto";
-
-   const img = document.createElement("img");
-   img.src = event.target.result;
-
-   const p = document.createElement("p");
-   p.textContent = "💚 Foto Saya";
-
-   div.appendChild(img);
-   div.appendChild(p);
-
-   document.getElementById("daftarGaleri").appendChild(div);
-  };
-
-  reader.readAsDataURL(file);
- });
-
- e.target.value = "";
-});
-
+}
 </script>
 
 </body>
