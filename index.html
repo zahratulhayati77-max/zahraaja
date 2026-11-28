@@ -4,326 +4,388 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panda Little World</title>
+<title>Website Rahimah - Panda World</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
 * {
- margin:0;
- padding:0;
- box-sizing:border-box;
- scroll-behavior:smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
- font-family:Arial,sans-serif;
- background:#f4f7ef;
- color:#405743;
+    font-family: 'Nunito', sans-serif;
+    background: #fafafa;
+    color: #454545;
+    overflow-x: hidden;
 }
 
-nav {
- background:white;
- padding:18px 7%;
- display:flex;
- justify-content:space-between;
- align-items:center;
- flex-wrap:wrap;
- gap:15px;
- box-shadow:0 3px 15px #526b5515;
- position:sticky;
- top:0;
- z-index:10;
+/* DEKORASI */
+body::before {
+    content: "🐼";
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    font-size: 75px;
+    opacity: .12;
+    z-index: -1;
+}
+
+body::after {
+    content: "🎋";
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    font-size: 80px;
+    opacity: .15;
+    z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,.9);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #00000012;
 }
 
 .logo {
- font-size:21px;
- font-weight:bold;
+    font-size: 23px;
+    font-weight: 900;
+    color: #333;
 }
 
-.menu {
- display:flex;
- gap:20px;
- flex-wrap:wrap;
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
 
-.menu a {
- text-decoration:none;
- color:#526b55;
- font-weight:bold;
- font-size:14px;
- cursor:pointer;
+.nav-menu a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 800;
+    transition: .3s;
 }
 
-.menu a:hover,
-.menu a.active {
- color:#a0b89b;
+.nav-menu a:hover {
+    color: #e89bb5;
 }
 
-main, .halaman {
- max-width:1050px;
- margin:auto;
- padding:50px 25px;
+/* HERO */
+.hero {
+    min-height: 570px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: linear-gradient(135deg,#eeeeee,#ffffff,#ffeaf1);
 }
 
-.welcome {
- background:linear-gradient(135deg,#e5efdf,#f8f9f1);
- padding:55px 25px;
- border-radius:25px;
- text-align:center;
- margin-bottom:40px;
+.hero-text {
+    max-width: 580px;
 }
 
-.panda {
- font-size:55px;
+.small-title {
+    background: white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: #d982a1;
+    font-weight: 900;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px #0000000d;
 }
 
-.welcome h1 {
- font-size:35px;
- margin:15px 0;
+.hero h1 {
+    font-size: clamp(38px,6vw,65px);
+    line-height: 1.15;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.welcome p {
- color:#879187;
- line-height:1.8;
+.hero h1 span {
+    color: #e28eac;
 }
 
-.judul {
- text-align:center;
- margin-bottom:25px;
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+    color: #666;
 }
 
-.judul h2 {
- font-size:27px;
- margin-bottom:8px;
+.btn {
+    display: inline-block;
+    padding: 14px 27px;
+    background: #333;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 7px 15px #00000025;
+    transition: .3s;
 }
 
-.judul p {
- color:#879187;
+.btn:hover {
+    transform: translateY(-5px);
+    background: #e28eac;
 }
 
-.tugas-container {
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:20px;
+.hero-image {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 160px;
+    box-shadow: 0 15px 35px #00000015;
+    border: 8px solid #f5dce5;
+    animation: float 3s ease-in-out infinite;
 }
 
-.tugas-card {
- background:white;
- padding:25px;
- border-radius:20px;
- text-decoration:none;
- color:#405743;
- box-shadow:0 5px 18px #526b5510;
- transition:.3s;
- cursor:pointer;
- border:1px solid #e7eee2;
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
 }
 
-.tugas-card:hover {
- transform:translateY(-5px);
+/* SECTION */
+section {
+    padding: 75px 8%;
 }
 
-.tugas-card .icon {
- font-size:38px;
- margin-bottom:15px;
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-.tugas-card h3 {
- margin-bottom:10px;
+.section-title h2 {
+    color: #333;
+    font-size: 35px;
+    margin-bottom: 10px;
 }
 
-.tugas-card p {
- color:#879187;
- font-size:14px;
- line-height:1.7;
+.section-title p {
+    color: #999;
 }
 
-.tugas-card span {
- display:inline-block;
- margin-top:15px;
- background:#e9f0e2;
- padding:8px 15px;
- border-radius:20px;
- font-size:12px;
- font-weight:bold;
+/* MENU CARD */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+    gap: 25px;
 }
 
-.halaman {
- display:none;
- min-height:450px;
+.menu-card {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    box-shadow: 0 8px 25px #0000000d;
+    transition: .3s;
+    border: 2px solid transparent;
 }
 
-.halaman.aktif {
- display:block;
+.menu-card:hover {
+    transform: translateY(-10px);
+    border-color: #efb6ca;
+    box-shadow: 0 12px 30px #e8b5c755;
 }
 
-.header-tugas {
- background:linear-gradient(135deg,#e5efdf,#f8f9f1);
- padding:30px;
- border-radius:20px;
- margin-bottom:25px;
+.menu-icon {
+    width: 85px;
+    height: 85px;
+    margin: auto auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    border-radius: 25px;
 }
 
-.header-tugas h1 {
- margin-bottom:12px;
+.pink {background:#ffe5ee;}
+.purple {background:#eeeeee;}
+.yellow {background:#fff2d8;}
+.blue {background:#e4f2f8;}
+.green {background:#e4f2e8;}
+
+.menu-card h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+    color: #333;
 }
 
-.header-tugas p {
- color:#879187;
- line-height:1.8;
+.menu-card p {
+    font-size: 14px;
+    color: #999;
 }
 
-.konten {
- background:white;
- padding:25px;
- border-radius:20px;
- margin-bottom:22px;
- border:1px solid #e5ebdf;
- box-shadow:0 5px 15px #526b5510;
+/* TUGAS */
+.tugas1,
+.tugas2,
+.tugas3 {
+    background: linear-gradient(135deg,#f5f5f5,#fff0f5);
+    display: none;
 }
 
-.konten h2 {
- margin-bottom:18px;
- color:#526b55;
+.tugas1:target,
+.tugas2:target,
+.tugas3:target {
+    display: block;
 }
 
-.konten h3 {
- margin-bottom:10px;
+.form-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #00000012;
 }
 
-.konten p {
- color:#788578;
- line-height:1.8;
- margin-bottom:10px;
+.form-container h3 {
+    text-align: center;
+    color: #d982a1;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
-.biodata {
- display:grid;
- grid-template-columns:140px 1fr;
- gap:13px;
- line-height:1.6;
+.form-description {
+    text-align: center;
+    color: #999;
+    margin-bottom: 25px;
+    line-height: 1.8;
 }
 
-.biodata div:nth-child(odd) {
- font-weight:bold;
- color:#526b55;
+.google-form,
+.google-sheet {
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background: #fafafa;
 }
 
-.hobi-container,
-.galeri {
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:15px;
+.google-form {
+    height: 900px;
 }
 
-.hobi {
- background:#f4f7ef;
- padding:20px;
- border-radius:15px;
+.google-sheet {
+    height: 750px;
 }
 
-.hobi .icon {
- font-size:30px;
- margin-bottom:10px;
+.form-back {
+    text-align: center;
+    margin-top: 25px;
 }
 
-.foto {
- background:#f4f7ef;
- border-radius:15px;
- overflow:hidden;
- text-align:center;
+.form-back a {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 900;
+    transition: .3s;
 }
 
-.foto img {
- width:100%;
- height:190px;
- object-fit:cover;
- display:block;
+.form-back a:hover {
+    background: #e28eac;
 }
 
-.foto p {
- padding:12px;
+/* ABOUT */
+.about {
+    background: #fff0f5;
+    text-align: center;
 }
 
-.video {
- width:100%;
- max-height:400px;
- border-radius:15px;
+.about-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    line-height: 1.9;
+    box-shadow: 0 8px 25px #00000012;
 }
 
-.tombol {
- display:inline-block;
- background:#849c7e;
- color:white;
- text-decoration:none;
- padding:12px 20px;
- border-radius:12px;
- margin:8px 5px 8px 0;
- font-size:14px;
- font-weight:bold;
+.about-box h3 {
+    color: #d982a1;
 }
 
-.tombol:hover {
- background:#657e60;
-}
-
-iframe {
- width:100%;
- height:450px;
- border:0;
- border-radius:12px;
- margin-top:15px;
-}
-
-.catatan {
- background:#f4f7ef;
- padding:15px;
- border-radius:12px;
- color:#788578;
- line-height:1.8;
- margin-top:15px;
-}
-
+/* FOOTER */
 footer {
- background:#35483a;
- color:white;
- text-align:center;
- padding:25px;
- line-height:2;
- margin-top:40px;
+    background: #333;
+    text-align: center;
+    padding: 30px 15px;
+    color: white;
+    font-weight: 800;
 }
 
-@media(max-width:600px) {
- nav {
-  flex-direction:column;
- }
+footer p {
+    margin: 5px;
+}
 
- .menu {
-  justify-content:center;
-  gap:14px;
- }
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
 
- .welcome h1 {
-  font-size:26px;
- }
+    .nav-menu {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+    }
 
- .tugas-container,
- .hobi-container,
- .galeri {
-  grid-template-columns:1fr;
- }
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 55px 7%;
+    }
 
- .halaman, main {
-  padding:25px 15px;
- }
+    .hero-image {
+        width: 220px;
+        height: 220px;
+        font-size: 110px;
+    }
 
- .biodata {
-  grid-template-columns:115px 1fr;
-  font-size:13px;
- }
+    .hero h1 {
+        font-size: 40px;
+    }
 
- iframe {
-  height:350px;
- }
+    section {
+        padding: 55px 6%;
+    }
+
+    .form-container {
+        padding: 12px;
+    }
+
+    .google-form {
+        height: 950px;
+    }
+
+    .google-sheet {
+        height: 650px;
+    }
 }
 </style>
 </head>
@@ -331,443 +393,306 @@ footer {
 <body>
 
 <!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">🐼 Rahimah's World</div>
 
-<nav>
- <div class="logo">🐼 Panda Little World</div>
-
- <div class="menu">
-  <a onclick="bukaHalaman('beranda')" id="nav-beranda" class="active">Beranda</a>
-  <a onclick="bukaHalaman('profil')" id="nav-profil">Profil</a>
-  <a onclick="bukaHalaman('tugas1')" id="nav-tugas1">Tugas 1</a>
-  <a onclick="bukaHalaman('tugas2')" id="nav-tugas2">Tugas 2</a>
-  <a onclick="bukaHalaman('tugas3')" id="nav-tugas3">Tugas 3</a>
-  <a onclick="bukaHalaman('tugas4')" id="nav-tugas4">Tugas 4</a>
- </div>
+    <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">Tentang</a></li>
+    </ul>
 </nav>
 
 <!-- BERANDA -->
+<header class="hero" id="home">
+    <div class="hero-text">
 
-<main id="beranda">
+        <div class="small-title">
+            🐼 Welcome to My Panda World 🎋
+        </div>
 
- <div class="welcome">
-  <div class="panda">🐼🌷</div>
-  <h1>Selamat Datang di Panda Little World</h1>
-  <p>
-   Halo! Selamat datang di website pribadi saya.
-   <br>
-   Di sini terdapat profil, dokumentasi, dan kumpulan tugas saya.
-   <br>
-   Silakan pilih halaman yang ingin kamu kunjungi.
-  </p>
- </div>
+        <h1>
+            Selamat Datang<br>
+            di <span>Website Saya!</span>
+        </h1>
 
- <div class="judul">
-  <h2>📚 Menu Utama</h2>
-  <p>Pilih halaman yang ingin kamu lihat.</p>
- </div>
+        <p>
+            Halo! Terima kasih sudah berkunjung.
+            Selamat datang di dunia kecil saya yang penuh
+            dengan panda, kebahagiaan, dan cerita.
+            Website ini dibuat untuk memperkenalkan diri
+            serta menampilkan berbagai kegiatan dan tugas saya. 🐼
+        </p>
 
- <div class="tugas-container">
+        <a href="#menu" class="btn">
+            Jelajahi Website ♡
+        </a>
 
-  <div class="tugas-card" onclick="bukaHalaman('profil')">
-   <div class="icon">👤</div>
-   <h3>Profil Saya</h3>
-   <p>Informasi pribadi, biodata, hobi, dan galeri saya.</p>
-   <span>Buka Profil →</span>
-  </div>
+    </div>
 
-  <div class="tugas-card" onclick="bukaHalaman('tugas1')">
-   <div class="icon">🌷</div>
-   <h3>Tugas 1</h3>
-   <p>Biodata pribadi, hobi, dan dokumentasi foto.</p>
-   <span>Buka Tugas →</span>
-  </div>
+    <div class="hero-image">🐼</div>
+</header>
 
-  <div class="tugas-card" onclick="bukaHalaman('tugas2')">
-   <div class="icon">💗</div>
-   <h3>Tugas 2</h3>
-   <p>Formulir online dan hasil pengolahan data spreadsheet.</p>
-   <span>Buka Tugas →</span>
-  </div>
+<!-- MENU UTAMA -->
+<section id="menu">
 
-  <div class="tugas-card" onclick="bukaHalaman('tugas3')">
-   <div class="icon">🎀</div>
-   <h3>Tugas 3</h3>
-   <p>Formulir dan visualisasi data menggunakan Looker Studio.</p>
-   <span>Buka Tugas →</span>
-  </div>
+    <div class="section-title">
+        <h2>🐼 Explore My Website ♡</h2>
+        <p>Yuk, jelajahi berbagai menu di dunia panda saya!</p>
+    </div>
 
-  <div class="tugas-card" onclick="bukaHalaman('tugas4')">
-   <div class="icon">📸</div>
-   <h3>Tugas 4</h3>
-   <p>Dokumentasi dan hasil proyek tugas kelompok.</p>
-   <span>Buka Tugas →</span>
-  </div>
+    <div class="menu-grid">
 
- </div>
-</main>
+        <a href="biodata.html" class="menu-card">
+            <div class="menu-icon pink">👩🏻‍🎓</div>
+            <h3>Biodata</h3>
+            <p>Kenali saya lebih dekat.</p>
+        </a>
 
-<!-- PROFIL -->
+        <a href="gallery.html" class="menu-card">
+            <div class="menu-icon purple">📸</div>
+            <h3>Gallery</h3>
+            <p>Kumpulan foto rumah.</p>
+        </a>
 
-<section class="halaman" id="profil">
+        <a href="video.html" class="menu-card">
+            <div class="menu-icon yellow">🎬</div>
+            <h3>Video</h3>
+            <p>Video sekitar rumah.</p>
+        </a>
 
- <div class="header-tugas">
-  <h1>👤 Profil Saya</h1>
-  <p>Kenali saya lebih dekat melalui biodata, hobi, dan galeri pribadi.</p>
- </div>
+        <a href="#tugas1" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas 1</h3>
+            <p>Formulir Kepuasan Pengguna DANA.</p>
+        </a>
 
- <div class="konten">
-  <h2>🌷 Tentang Saya</h2>
-  <p>
-   Halo! Perkenalkan, nama saya Zahratul Hayati.
-   Saya adalah seorang mahasiswa yang senang belajar
-   hal-hal baru dan mencoba pengalaman menarik.
-  </p>
-  <p>
-   Website ini saya buat sebagai tempat untuk
-   memperkenalkan diri dan mengumpulkan hasil tugas.
-  </p>
- </div>
+        <a href="#tugas2" class="menu-card">
+            <div class="menu-icon green">📝</div>
+            <h3>Tugas 2</h3>
+            <p>Kumpulan tugas kedua.</p>
+        </a>
 
- <div class="konten">
-  <h2>📋 Biodata Pribadi</h2>
+        <a href="#tugas3" class="menu-card">
+            <div class="menu-icon pink">📋</div>
+            <h3>Tugas 3</h3>
+            <p>Google Form dan Google Sheets.</p>
+        </a>
 
-  <div class="biodata">
-   <div>Nama Lengkap</div><div>: Zahratul Hayati </div>
-   <div>Nama Panggilan</div><div>: Zahra</div>
-   <div>Tempat, Tanggal Lahir</div><div>: Tabak Kanilan, 22 Mei 2005</div>
-   <div>Jenis Kelamin</div><div>: Perempuan </div>
-   <div>Alamat</div><div>: Jln.Ulm III</div>
-   <div>Pendidikan</div><div>: Universitas Lambung Mangkurat </div>
-   <div>Email</div><div>: zahratulhayati77@gmail.com</div>
-   <div>Hobi</div><div>: Nari,Tidur,Jlan2</div>
-  </div>
- </div>
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon blue">📚</div>
+            <h3>Tugas 4</h3>
+            <p>Kumpulan tugas empat.</p>
+        </a>
 
- <div class="konten">
-  <h2>💗 Hobi Saya</h2>
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon purple">🎓</div>
+            <h3>Tugas Akhir</h3>
+            <p>Kumpulan tugas akhir.</p>
+        </a>
 
-  <div class="hobi-container">
+        <a href="tugas1.html" class="menu-card">
+            <div class="menu-icon green">📊</div>
+            <h3>Data</h3>
+            <p>Kumpulan data.</p>
+        </a>
 
-   <div class="hobi">
-    <div class="icon">🎧</div>
-    <h3>Mendengarkan Musik</h3>
-    <p>Saya suka mendengarkan musik ketika sedang bersantai.</p>
-   </div>
-
-   <div class="hobi">
-    <div class="icon">📸</div>
-    <h3>Fotografi</h3>
-    <p>Mengabadikan momen dan hal-hal menarik.</p>
-   </div>
-
-   <div class="hobi">
-    <div class="icon">🍳</div>
-    <h3>Memasak</h3>
-    <p>Mencoba membuat berbagai makanan baru.</p>
-   </div>
-
-   <div class="hobi">
-    <div class="icon">✈️</div>
-    <h3>Traveling</h3>
-    <p>Mengunjungi tempat baru dan menikmati pemandangan.</p>
-   </div>
-
-  </div>
- </div>
-
- <div class="konten">
-  <h2>📸 Galeri Foto</h2>
-
-  <div class="galeri">
-
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Foto+" alt="Foto 1">
-    <p>Foto Kenangan 1</p>
-   </div>
-
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Foto+2" alt="Foto 2">
-    <p>Foto Kenangan 2</p>
-   </div>
-
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Foto+3" alt="Foto 3">
-    <p>Foto Kenangan 3</p>
-   </div>
-
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Foto+4" alt="Foto 4">
-    <p>Foto Kenangan 4</p>
-   </div>
-
-  </div>
- </div>
-
+    </div>
 </section>
 
 <!-- TUGAS 1 -->
+<section class="tugas1" id="tugas1">
 
-<section class="halaman" id="tugas1">
+    <div class="section-title">
+        <h2>🐼 Tugas 1 - Google Form</h2>
+        <p>Formulir Kepuasan Pengguna Dompet Digital DANA</p>
+    </div>
 
- <div class="header-tugas">
-  <h1>🌷 Tugas 1</h1>
-  <p>Biodata pribadi, hobi, dan galeri foto serta video.</p>
- </div>
+    <div class="form-container">
 
- <div class="konten">
-  <h2>📋 Deskripsi Tugas</h2>
-  <p>
-   Pada tugas pertama ini, saya membuat halaman
-   perkenalan diri yang berisi biodata pribadi,
-   daftar hobi, serta dokumentasi foto dan video.
-  </p>
- </div>
+        <h3>📝 Formulir Kepuasan Pengguna DANA</h3>
 
- <div class="konten">
-  <h2>👤 Biodata Pribadi</h2>
-  <p><b>Nama:</b> [Nama kamu]</p>
-  <p><b>Tempat, tanggal lahir:</b> [Isi di sini]</p>
-  <p><b>Alamat:</b> [Isi di sini]</p>
-  <p><b>Pendidikan:</b> [Isi di sini]</p>
- </div>
+        <p class="form-description">
+            Silakan isi formulir berikut sesuai pengalaman
+            kamu sebagai pengguna dompet digital DANA.
+            Terima kasih atas partisipasinya! ♡
+        </p>
 
- <div class="konten">
-  <h2>💗 Daftar Hobi</h2>
+        <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/16E8ItNW9GYCIG_LmXcetD3ov4DbkrI95I_YjbpsTI7U/viewform?embedded=true"
+            title="Formulir Kepuasan Pengguna DANA"
+            loading="lazy">
+        </iframe>
 
-  <div class="hobi-container">
-   <div class="hobi">
-    <div class="icon">🎧</div>
-    <h3>Mendengarkan Musik</h3>
-    <p>Aktivitas yang saya sukai saat waktu luang.</p>
-   </div>
+        <div class="form-back">
+            <a href="#menu">🐼 Kembali ke Menu</a>
+        </div>
 
-   <div class="hobi">
-    <div class="icon">📸</div>
-    <h3>Fotografi</h3>
-    <p>Mengabadikan berbagai momen menarik.</p>
-   </div>
-  </div>
- </div>
-
- <div class="konten">
-  <h2>📸 Dokumentasi Foto</h2>
-  <div class="galeri">
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Dokumentasi+1" alt="Dokumentasi 1">
-    <p>Dokumentasi pertama</p>
-   </div>
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Dokumentasi+2" alt="Dokumentasi 2">
-    <p>Dokumentasi kedua</p>
-   </div>
-  </div>
- </div>
-
- <div class="konten">
-  <h2>🎥 Dokumentasi Video</h2>
-  <p>Video dokumentasi tugas pertama saya.</p>
-
-  <!-- Ganti dengan alamat video milikmu -->
-  <video class="video" controls>
-   <source src="video-kamu.mp4" type="video/mp4">
-   Browser tidak mendukung video.
-  </video>
- </div>
-
+    </div>
 </section>
 
 <!-- TUGAS 2 -->
+<section class="tugas2" id="tugas2">
 
-<section class="halaman" id="tugas2">
+    <div class="section-title">
+        <h2>🐼 Tugas 2 - Google Sheets</h2>
+        <p>Tampilan data dari Google Sheets</p>
+    </div>
 
- <div class="header-tugas">
-  <h1>💗 Tugas 2</h1>
-  <p>Formulir Google dan pengolahan data menggunakan spreadsheet.</p>
- </div>
+    <div class="form-container">
 
- <div class="konten">
-  <h2>📝 Deskripsi Tugas</h2>
-  <p>
-   Pada tugas kedua ini terdapat formulir online
-   untuk mengumpulkan data. Data yang telah masuk
-   kemudian ditampilkan dan dikelola menggunakan Google Spreadsheet.
-  </p>
- </div>
+        <h3>📊 Data Tugas 2</h3>
 
- <div class="konten">
-  <h2>📋 Formulir Google</h2>
-  <p>Silakan isi formulir melalui halaman berikut.</p>
+        <p class="form-description">
+            Berikut adalah tampilan data yang terhubung
+            dari Google Sheets. ♡
+        </p>
 
-  <a class="tombol" href="https://docs.google.com/forms/" target="_blank">
-   ↗ Buka Formulir
-  </a>
+        <iframe
+            class="google-sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRvmsYKKDppFFciIHKThMoVyfLZfz5pyyDY9-zsB4F1KWhUEMYoMdCst-cPyn3iTWxI7wDRdKt-8_tO/pubhtml?widget=true&amp;headers=false"
+            title="Data Tugas 2"
+            loading="lazy">
+        </iframe>
 
-  <!-- Ganti LINK_FORM_EMBED dengan link embed formulirmu -->
-  <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true">
-  </iframe>
+        <div class="form-back">
+            <a href="#menu">🐼 Kembali ke Menu</a>
+        </div>
 
-  <div class="catatan">
-   Jika formulir tidak tampil, gunakan tombol Buka Formulir.
-  </div>
- </div>
-
- <div class="konten">
-  <h2>📊 Google Spreadsheet</h2>
-  <p>
-   Berikut merupakan tempat untuk melihat hasil
-   pengumpulan data dari formulir.
-  </p>
-
-  <a class="tombol" href="https://docs.google.com/spreadsheets/" target="_blank">
-   ↗ Buka Spreadsheet
-  </a>
-
-  <!-- Ganti LINK_SPREADSHEET dengan link embed spreadsheet -->
-  <iframe src="https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/preview">
-  </iframe>
- </div>
-
+    </div>
 </section>
 
 <!-- TUGAS 3 -->
+<section class="tugas3" id="tugas3">
 
-<section class="halaman" id="tugas3">
+    <div class="section-title">
+        <h2>🐼 Tugas 3</h2>
+        <p>Google Form, Google Sheets, dan Looker Studio</p>
+    </div>
 
- <div class="header-tugas">
-  <h1>🎀 Tugas 3</h1>
-  <p>Formulir Google dan visualisasi data Looker Studio.</p>
- </div>
+    <!-- GOOGLE FORM -->
+    <div class="form-container">
 
- <div class="konten">
-  <h2>📝 Deskripsi Tugas</h2>
-  <p>
-   Tugas ketiga berisi formulir pengumpulan data
-   dan hasil pengolahan data yang disajikan dalam
-   bentuk visualisasi menggunakan Google Looker Studio.
-  </p>
- </div>
+        <h3>📝 Google Form Tugas 3</h3>
 
- <div class="konten">
-  <h2>📋 Formulir Pengumpulan Data</h2>
-  <p>Silakan isi formulir tugas ketiga.</p>
+        <p class="form-description">
+            Silakan isi formulir berikut sesuai petunjuk
+            yang tersedia. Terima kasih sudah berpartisipasi! ♡
+        </p>
 
-  <a class="tombol" href="https://docs.google.com/forms/" target="_blank">
-   ↗ Buka Formulir
-  </a>
+        <iframe
+            class="google-form"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSft2eNIP2hIOFHgjFL7GbKJxFkFMlbMm9tcn_8DiSmuOucWnw/viewform?embedded=true"
+            title="Google Form Tugas 3"
+            loading="lazy">
+        </iframe>
 
-  <!-- Masukkan link embed Google Form -->
-  <iframe src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true">
-  </iframe>
- </div>
+    </div>
 
- <div class="konten">
-  <h2>📊 Dashboard Looker Studio</h2>
-  <p>
-   Berikut adalah tampilan hasil visualisasi
-   data dari tugas ketiga.
-  </p>
+    <br><br>
 
-  <a class="tombol" href="https://lookerstudio.google.com/" target="_blank">
-   ↗ Buka Dashboard
-  </a>
+    <!-- GOOGLE SHEETS -->
+    <div class="form-container">
 
-  <!-- Masukkan link embed Looker Studio -->
-  <iframe src="https://lookerstudio.google.com/embed/reporting/REPORT_ID/page/PAGE_ID">
-  </iframe>
- </div>
+        <h3>📊 Google Sheets Tugas 3</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan data dari Google Sheets
+            untuk Tugas 3. ♡
+        </p>
+
+        <iframe
+            class="google-sheet"
+            src="https://docs.google.com/spreadsheets/d/1DYOBSILfvtuO7oR-8GW0yVuPo-1wmzdhnV_KfRg9FXo/preview"
+            title="Google Sheets Tugas 3"
+            loading="lazy">
+        </iframe>
+
+        <div class="form-back">
+            <a href="https://docs.google.com/spreadsheets/d/1DYOBSILfvtuO7oR-8GW0yVuPo-1wmzdhnV_KfRg9FXo/edit?usp=sharing"
+               target="_blank" rel="noopener">
+                Buka Google Sheets
+            </a>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- LOOKER STUDIO -->
+    <div class="form-container">
+
+        <h3>📈 Dashboard Tugas 3 - Looker Studio</h3>
+
+        <p class="form-description">
+            Berikut adalah tampilan dashboard laporan
+            dari Looker Studio. ♡
+        </p>
+
+        <iframe
+            width="100%"
+            height="750"
+            src="https://datastudio.google.com/embed/reporting/de73dff2-12e5-4bd4-8adb-3cb1e81a2d0a/page/vPHEG"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+        </iframe>
+
+        <div class="form-back">
+            <a href="https://datastudio.google.com/reporting/de73dff2-12e5-4bd4-8adb-3cb1e81a2d0a"
+               target="_blank" rel="noopener">
+                Buka Dashboard Looker Studio
+            </a>
+        </div>
+
+    </div>
+
+    <div class="form-back">
+        <a href="#menu">🐼 Kembali ke Menu</a>
+    </div>
 
 </section>
 
-<!-- TUGAS 4 -->
+<!-- TENTANG WEBSITE -->
+<section class="about" id="about">
 
-<section class="halaman" id="tugas4">
+    <div class="section-title">
+        <h2>🐼 About My Panda World</h2>
+        <p>My Personal Website</p>
+    </div>
 
- <div class="header-tugas">
-  <h1>📸 Tugas 4</h1>
-  <p>Dokumentasi hasil proyek dan kegiatan kelompok.</p>
- </div>
+    <div class="about-box">
 
- <div class="konten">
-  <h2>📚 Deskripsi Tugas</h2>
-  <p>
-   Pada tugas keempat ini saya menyajikan hasil
-   kegiatan dan proyek yang telah dikerjakan.
-   Halaman ini menjadi tempat dokumentasi hasil tugas.
-  </p>
- </div>
+        <h3>♡ Selamat datang di situs web saya ♡</h3>
 
- <div class="konten">
-  <h2>📝 Informasi Tugas</h2>
-  <p><b>Nama kegiatan:</b> [Masukkan nama kegiatan]</p>
-  <p><b>Nama kelompok:</b> [Masukkan nama kelompok]</p>
-  <p><b>Anggota:</b> [Masukkan nama anggota]</p>
-  <p><b>Deskripsi:</b> [Jelaskan kegiatan atau proyek]</p>
- </div>
+        <p>
+            Website ini dibuat sebagai media untuk
+            memperkenalkan diri, serta menampilkan
+            berbagai hasil tugas dan dokumentasi pribadi.
+            Dengan tema panda yang lucu dan sederhana,
+            semoga website ini memberikan kesan nyaman
+            bagi setiap pengunjung.
+        </p>
 
- <div class="konten">
-  <h2>📋 Hasil Pengumpulan Data</h2>
-  <p>
-   Bagian ini digunakan untuk menampilkan hasil
-   pengumpulan data tugas keempat.
-  </p>
+        <br>
 
-  <a class="tombol" href="#" target="_blank">
-   ↗ Buka Hasil Tugas
-  </a>
- </div>
+        <h2>Thank You for Visiting! 🐼💗</h2>
 
- <div class="konten">
-  <h2>📸 Dokumentasi Kegiatan</h2>
+        <p>Stay Cute, Stay Happy, and Keep Growing! 🎋</p>
 
-  <div class="galeri">
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Kegiatan+1" alt="Kegiatan 1">
-    <p>Dokumentasi kegiatan 1</p>
-   </div>
-
-   <div class="foto">
-    <img src="https://placehold.co/600x400/e5efdf/526b55?text=Kegiatan+2" alt="Kegiatan 2">
-    <p>Dokumentasi kegiatan 2</p>
-   </div>
-  </div>
- </div>
-
+    </div>
 </section>
 
 <!-- FOOTER -->
-
 <footer>
- <h3>🐼 Panda Little World</h3>
- <p>Made with Love 💚</p>
- <p>Terima kasih sudah mengunjungi website saya!</p>
- <p>© 2026 Panda Little World</p>
+
+    <p>🐼 Website Rahimah 🐼</p>
+    <p>Made with Love ♡</p>
+    <p>Keep Growing, Keep Shining! 🎋</p>
+
 </footer>
-
-<!-- JAVASCRIPT -->
-
-<script>
-function bukaHalaman(id) {
-
- document.getElementById("beranda").style.display =
-  id === "beranda" ? "block" : "none";
-
- document.querySelectorAll(".halaman").forEach(function(item) {
-  item.classList.remove("aktif");
- });
-
- if(id !== "beranda") {
-  document.getElementById(id).classList.add("aktif");
- }
-
- document.querySelectorAll(".menu a").forEach(function(link) {
-  link.classList.remove("active");
- });
-
- document.getElementById("nav-" + id).classList.add("active");
-
- window.scrollTo(0,0);
-}
-</script>
 
 </body>
 </html>
