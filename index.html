@@ -4,119 +4,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biodata Pribadi</title>
+<title>Tugas Nabila Azzahra</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #fff5f7;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fffaf5;
     color: #444;
 }
 
 header {
-    background: #e98da9;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background: #f5e4d5;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-nav {
-    margin-top: 12px;
+header h3 {
+    color: #8b604b;
+    margin: 5px;
 }
 
 nav a {
-    color: white;
     text-decoration: none;
-    margin: 0 12px;
+    color: #755342;
+    margin: 8px;
     font-size: 14px;
 }
 
-.hero {
-    min-height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, #ffe0e9, #fff5f7);
-}
-
-.hero img {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 5px 20px #d99bad;
-}
-
-.hero h1 {
-    color: #c65d80;
-    margin-top: 20px;
-    font-size: 35px;
-}
-
-.hero p {
-    margin-top: 10px;
-    color: #777;
-}
-
-section {
-    padding: 65px 20px;
-    max-width: 950px;
+.container {
+    max-width: 1000px;
     margin: auto;
+    padding: 25px 18px;
 }
 
-h2 {
+.welcome {
     text-align: center;
-    color: #c65d80;
-    margin-bottom: 30px;
+    padding: 45px 15px;
+}
+
+.welcome h1 {
+    color: #9a7158;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px #ead3da;
-    margin-bottom: 20px;
+    padding: 22px;
+    border-radius: 12px;
+    margin: 18px 0;
+    box-shadow: 0 3px 12px #eadfd7;
 }
 
-.bio-item {
-    padding: 12px 0;
-    border-bottom: 1px solid #f4e2e8;
+.profile {
+    text-align: center;
 }
 
-.bio-item:last-child {
-    border-bottom: none;
+.profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.bio-item strong {
-    color: #c65d80;
+.profile h1 {
+    color: #9a7158;
 }
 
-.hobi {
+h2, h3 {
+    color: #9a7158;
+}
+
+.bio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 1fr 2fr;
+    gap: 13px;
+}
+
+.bio p {
+    margin: 0;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.hobbies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
 }
 
-.hobi div {
-    background: white;
-    padding: 25px;
+.hobby {
+    background: #fff7f0;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px #ead3da;
+}
+
+.hobby span {
+    font-size: 30px;
 }
 
 .gallery {
@@ -127,41 +119,48 @@ h2 {
 
 .gallery img {
     width: 100%;
-    height: 220px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.task {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 3px 10px #eadfd7;
+}
+
+.task a {
+    color: #a36f51;
 }
 
 footer {
-    background: #e98da9;
-    color: white;
+    background: #f5e4d5;
     text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-}
-
-button {
-    background: #d96f91;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #bd5478;
+    padding: 20px;
+    color: #755342;
 }
 
 @media(max-width: 600px) {
-    .hero h1 {
-        font-size: 27px;
+    header {
+        justify-content: center;
+        text-align: center;
     }
 
-    nav a {
-        margin: 0 5px;
-        font-size: 12px;
+    nav {
+        margin-top: 12px;
+    }
+
+    .bio {
+        grid-template-columns: 1fr;
+        gap: 4px;
     }
 }
 </style>
@@ -170,92 +169,178 @@ button:hover {
 <body>
 
 <header>
-    <h2 style="color:white;margin:0;">My Personal Website</h2>
+    <h3>📒 Tugas Nabila</h3>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#biodata">Biodata</a>
-        <a href="#hobi">Hobi</a>
-        <a href="#galeri">Galeri</a>
+        <a href="#beranda">Beranda</a>
+        <a href="#tugas1">Tugas 1</a>
+        <a href="#tugas2">Tugas 2</a>
+        <a href="#tugas3">Tugas 3</a>
+        <a href="#tugas4">Tugas 4</a>
     </nav>
 </header>
 
+<div class="container">
+
 <!-- BERANDA -->
-<div class="hero" id="home">
-    <img src="foto.jpg" alt="Foto Profil">
-    <h1>Halo, Saya Nama Kamu!</h1>
-    <p>Selamat datang di website biodata pribadi saya ♡</p>
-    <button onclick="document.getElementById('biodata').scrollIntoView()">
-        Kenali Saya
-    </button>
+<section class="welcome" id="beranda">
+    <h1>🌼 Selamat Datang</h1>
+    <p>Ini website kumpulan tugas Nabila Azzahra.
+    Pilih salah satu tugas di bawah untuk membukanya.</p>
+
+    <div class="card">
+        <a href="#tugas1">1. Tugas 1 Biodata pribadi, hobi, dan galeri foto serta video.</a>
+        <br><br>
+        <a href="#tugas2">2. Tugas 2 Formulir Google dan spreadsheet.</a>
+        <br><br>
+        <a href="#tugas3">3. Tugas 3 Formulir Google dan data Looker Studio.</a>
+        <br><br>
+        <a href="#tugas4">4. Tugas 4 Portal KUB.</a>
+    </div>
+</section>
+
+<!-- TUGAS 1 -->
+<section id="tugas1">
+
+    <!-- PROFIL -->
+    <div class="card profile">
+        <img src="foto-profil.jpg" alt="Foto profil Nabila">
+        <h1>Nabila Azzahra</h1>
+        <p>Mahasiswa Universitas Lambung Mangkurat</p>
+    </div>
+
+    <!-- BIODATA -->
+    <div class="card">
+        <h2>🌷 Biodata</h2>
+        <p>Halo! Saya Nable. Saya orang yang sangat ceria.</p>
+
+        <div class="bio">
+            <p>Nama lengkap</p>
+            <p>Nabila Azzahra</p>
+
+            <p>Nama panggilan</p>
+            <p>Nable</p>
+
+            <p>Tempat, tanggal lahir</p>
+            <p>Banjarbaru, 22 September 2006</p>
+
+            <p>Jenis kelamin</p>
+            <p>Perempuan</p>
+
+            <p>Agama</p>
+            <p>Islam</p>
+
+            <p>Alamat</p>
+            <p>Banjarbaru</p>
+
+            <p>Pendidikan</p>
+            <p>Universitas Lambung Mangkurat</p>
+
+            <p>Email</p>
+            <p>nabilaazzahra.2410715120002.sep@gmail.com</p>
+
+            <p>Telepon</p>
+            <p>085754144740</p>
+        </div>
+    </div>
+
+    <!-- HOBI -->
+    <div class="card">
+        <h2>Hobi</h2>
+
+        <div class="hobbies">
+            <div class="hobby">
+                <span>🍳</span>
+                <h3>Memasak</h3>
+                <p>Sangat suka memasak makanan yang digemari.</p>
+            </div>
+
+            <div class="hobby">
+                <span>🎧</span>
+                <h3>Mendengarkan musik</h3>
+                <p>Sangat suka mendengarkan musik saat berkegiatan.</p>
+            </div>
+
+            <div class="hobby">
+                <span>🏸</span>
+                <h3>Olahraga</h3>
+                <p>Olahraga badminton sangat saya sukai.</p>
+            </div>
+
+            <div class="hobby">
+                <span>✈️</span>
+                <h3>Traveling</h3>
+                <p>Sangat suka bepergian ke tempat yang seru.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALERI -->
+    <div class="card">
+        <h2>Galeri</h2>
+        <h3>Foto</h3>
+
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Tampak samping rumah">
+            <img src="foto2.jpg" alt="Tampak depan rumah">
+            <img src="foto3.jpg" alt="Kamar tidur sisi pintu">
+            <img src="foto4.jpg" alt="Kamar tidur sisi jendela">
+        </div>
+
+        <h3>Video</h3>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+        <p>Video tampak depan rumah</p>
+    </div>
+</section>
+
+<!-- TUGAS 2 -->
+<section id="tugas2">
+    <h1>Tugas 2</h1>
+    <p>Silakan isi formulir dan lihat spreadsheet di bawah ini.</p>
+
+    <div class="task">
+        <h2>Formulir</h2>
+        <p>Formulir Google Tugas 2</p>
+        <a href="#" target="_blank">↗ Buka di tab baru</a>
+    </div>
+
+    <div class="task">
+        <h2>Spreadsheet</h2>
+        <a href="#" target="_blank">↗ Buka spreadsheet di tab baru</a>
+    </div>
+</section>
+
+<!-- TUGAS 3 -->
+<section id="tugas3">
+    <h1>Tugas 3</h1>
+    <p>Silakan isi formulir dan lihat tampilan data dari Looker Studio.</p>
+
+    <div class="task">
+        <h2>Formulir</h2>
+        <a href="#" target="_blank">↗ Buka formulir</a>
+    </div>
+
+    <div class="task">
+        <h2>Data Looker Studio</h2>
+        <a href="#" target="_blank">↗ Buka laporan</a>
+    </div>
+</section>
+
+<!-- TUGAS 4 -->
+<section id="tugas4">
+    <h1>Tugas 4</h1>
+    <div class="task">
+        <h2>Portal KUB</h2>
+        <p>Hasil Tangkapan Kelompok (Form, Spreadsheet & Dashboard).</p>
+    </div>
+</section>
+
 </div>
 
-<!-- BIODATA -->
-<section id="biodata">
-    <h2>♡ Biodata Pribadi ♡</h2>
-
-    <div class="card">
-        <div class="bio-item">
-            <strong>Nama Lengkap:</strong> Nama Lengkap Kamu
-        </div>
-        <div class="bio-item">
-            <strong>Nama Panggilan:</strong> Nama Panggilan
-        </div>
-        <div class="bio-item">
-            <strong>Tempat, Tanggal Lahir:</strong> Kota, Tanggal Lahir
-        </div>
-        <div class="bio-item">
-            <strong>Jenis Kelamin:</strong> Perempuan
-        </div>
-        <div class="bio-item">
-            <strong>Alamat:</strong> Alamat Kamu
-        </div>
-        <div class="bio-item">
-            <strong>Pendidikan:</strong> Nama Sekolah / Kampus
-        </div>
-        <div class="bio-item">
-            <strong>Email:</strong> email@example.com
-        </div>
-    </div>
-</section>
-
-<!-- TENTANG SAYA -->
-<section id="tentang">
-    <h2>♡ Tentang Saya ♡</h2>
-    <div class="card">
-        <p style="line-height:1.9;text-align:justify;">
-            Halo semuanya! Perkenalkan, nama saya Nama Kamu.
-            Saya adalah seseorang yang senang mempelajari hal-hal
-            baru dan mencoba pengalaman menarik. Saya percaya
-            bahwa setiap pengalaman merupakan kesempatan untuk
-            menjadi pribadi yang lebih baik.
-        </p>
-    </div>
-</section>
-
-<!-- HOBI -->
-<section id="hobi">
-    <h2>♡ Hobi Saya ♡</h2>
-    <div class="hobi">
-        <div>📖<p>Membaca</p></div>
-        <div>🎵<p>Mendengarkan Musik</p></div>
-        <div>📷<p>Fotografi</p></div>
-        <div>✈️<p>Traveling</p></div>
-    </div>
-</section>
-
-<!-- GALERI -->
-<section id="galeri">
-    <h2>♡ Galeri Foto ♡</h2>
-    <div class="gallery">
-        <img src="foto1.jpg" alt="Foto Galeri 1">
-        <img src="foto2.jpg" alt="Foto Galeri 2">
-        <img src="foto3.jpg" alt="Foto Galeri 3">
-    </div>
-</section>
-
 <footer>
-    <p>© 2026 My Personal Website</p>
-    <p>Made with ♡ by Nama Kamu</p>
+    <p>© 2026 Nabila Azzahra</p>
 </footer>
 
 </body>
