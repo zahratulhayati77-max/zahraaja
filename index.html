@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Zahratul Hayati/title>
+<title>Website Zahratul Hayati 🐼</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -17,30 +18,28 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background: #fff8fc;
-    color: #55475c;
+    background: #fafafa;
+    color: #333;
     overflow-x: hidden;
 }
 
 body::before {
-    content: "✿";
+    content: "🐼";
     position: fixed;
     top: 100px;
-    left: 25px;
-    font-size: 90px;
-    color: #f8cce2;
-    opacity: .35;
+    left: 15px;
+    font-size: 75px;
+    opacity: .10;
     z-index: -1;
 }
 
 body::after {
-    content: "✧";
+    content: "🎋";
     position: fixed;
-    right: 35px;
-    bottom: 50px;
-    font-size: 100px;
-    color: #cbbcf5;
-    opacity: .4;
+    right: 20px;
+    bottom: 40px;
+    font-size: 75px;
+    opacity: .15;
     z-index: -1;
 }
 
@@ -51,18 +50,17 @@ body::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,.85);
-    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,.95);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 3px 15px #eacfe455;
+    box-shadow: 0 3px 15px #00000015;
 }
 
 .logo {
     font-size: 23px;
     font-weight: 900;
-    color: #c47ba8;
+    color: #222;
 }
 
 .nav-menu {
@@ -73,13 +71,13 @@ body::after {
 
 .nav-menu a {
     text-decoration: none;
-    color: #66566c;
+    color: #444;
     font-weight: 800;
     transition: .3s;
 }
 
 .nav-menu a:hover {
-    color: #d77eae;
+    color: #888;
 }
 
 /* HERO */
@@ -90,7 +88,7 @@ body::after {
     align-items: center;
     justify-content: space-between;
     gap: 35px;
-    background: linear-gradient(135deg,#ffe5f0,#f2eaff,#fff5e8);
+    background: linear-gradient(135deg,#eeeeee,#ffffff,#dedede);
 }
 
 .hero-text {
@@ -102,7 +100,7 @@ body::after {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 30px;
-    color: #c47ba8;
+    color: #333;
     font-weight: 800;
     margin-bottom: 20px;
 }
@@ -110,12 +108,12 @@ body::after {
 .hero h1 {
     font-size: clamp(38px,6vw,65px);
     line-height: 1.15;
-    color: #74577d;
+    color: #222;
     margin-bottom: 20px;
 }
 
 .hero h1 span {
-    color: #df87b6;
+    color: #777;
 }
 
 .hero p {
@@ -127,30 +125,30 @@ body::after {
 .btn {
     display: inline-block;
     padding: 14px 27px;
-    background: #d98ab5;
+    background: #222;
     color: white;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 900;
-    box-shadow: 0 7px 15px #d98ab555;
+    box-shadow: 0 7px 15px #00000030;
     transition: .3s;
 }
 
 .btn:hover {
     transform: translateY(-5px);
-    background: #bc6e9b;
+    background: #555;
 }
 
 .hero-image {
     width: 340px;
     height: 340px;
     border-radius: 50%;
-    background: #fff;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 150px;
-    box-shadow: 0 15px 35px #c9a9d455;
+    font-size: 160px;
+    box-shadow: 0 15px 35px #00000020;
     animation: float 3s ease-in-out infinite;
 }
 
@@ -170,16 +168,16 @@ section {
 }
 
 .section-title h2 {
-    color: #795e83;
+    color: #222;
     font-size: 35px;
     margin-bottom: 10px;
 }
 
 .section-title p {
-    color: #9c879f;
+    color: #888;
 }
 
-/* MENU CARD */
+/* MENU */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
@@ -192,16 +190,16 @@ section {
     border-radius: 25px;
     text-align: center;
     text-decoration: none;
-    color: #66566c;
-    box-shadow: 0 8px 25px #d9c3dd40;
+    color: #444;
+    box-shadow: 0 8px 25px #00000012;
     transition: .3s;
     border: 2px solid transparent;
 }
 
 .menu-card:hover {
     transform: translateY(-10px);
-    border-color: #f3c6df;
-    box-shadow: 0 12px 30px #d9a9cb55;
+    border-color: #aaa;
+    box-shadow: 0 12px 30px #00000020;
 }
 
 .menu-icon {
@@ -215,28 +213,28 @@ section {
     border-radius: 25px;
 }
 
-.pink {background:#ffe1ed;}
-.purple {background:#eee3ff;}
-.yellow {background:#fff1ce;}
-.blue {background:#dff2ff;}
-.green {background:#e0f6e7;}
+.pink {background:#fce4ec;}
+.purple {background:#eeeeee;}
+.yellow {background:#fff3cd;}
+.blue {background:#e3f2fd;}
+.green {background:#e8f5e9;}
 
 .menu-card h3 {
     font-size: 21px;
     margin-bottom: 8px;
-    color: #805f87;
+    color: #222;
 }
 
 .menu-card p {
     font-size: 14px;
-    color: #a493a7;
+    color: #999;
 }
 
 /* TUGAS */
 .tugas1,
 .tugas2,
 .tugas3 {
-    background: linear-gradient(135deg,#fff0f7,#f5edff);
+    background: linear-gradient(135deg,#eeeeee,#ffffff);
     display: none;
 }
 
@@ -252,19 +250,19 @@ section {
     background: white;
     padding: 25px;
     border-radius: 25px;
-    box-shadow: 0 8px 25px #d9c3dd40;
+    box-shadow: 0 8px 25px #00000015;
 }
 
 .form-container h3 {
     text-align: center;
-    color: #c47ba8;
+    color: #333;
     font-size: 25px;
     margin-bottom: 10px;
 }
 
 .form-description {
     text-align: center;
-    color: #9c879f;
+    color: #888;
     margin-bottom: 25px;
     line-height: 1.8;
 }
@@ -274,7 +272,7 @@ section {
     width: 100%;
     border: none;
     border-radius: 15px;
-    background: #fff8fc;
+    background: #fafafa;
 }
 
 .google-form {
@@ -292,7 +290,7 @@ section {
 
 .form-back a {
     display: inline-block;
-    background: #d98ab5;
+    background: #222;
     color: white;
     padding: 12px 25px;
     text-decoration: none;
@@ -302,12 +300,12 @@ section {
 }
 
 .form-back a:hover {
-    background: #bc6e9b;
+    background: #666;
 }
 
 /* ABOUT */
 .about {
-    background: #fff0f7;
+    background: #eeeeee;
     text-align: center;
 }
 
@@ -318,15 +316,15 @@ section {
     background: white;
     border-radius: 25px;
     line-height: 1.9;
-    box-shadow: 0 8px 25px #eacfe455;
+    box-shadow: 0 8px 25px #00000015;
 }
 
 /* FOOTER */
 footer {
-    background: #eac8df;
+    background: #222;
     text-align: center;
     padding: 30px 15px;
-    color: #74577d;
+    color: white;
     font-weight: 800;
 }
 
@@ -357,7 +355,7 @@ footer p {
     .hero-image {
         width: 220px;
         height: 220px;
-        font-size: 100px;
+        font-size: 110px;
     }
 
     .hero h1 {
@@ -387,7 +385,7 @@ footer p {
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <div class="logo">website saya</div>
+    <div class="logo">🐼 Zahratul Hayati</div>
 
     <ul class="nav-menu">
         <li><a href="#home">Home</a></li>
@@ -399,8 +397,9 @@ footer p {
 <!-- BERANDA -->
 <header class="hero" id="home">
     <div class="hero-text">
+
         <div class="small-title">
-            ✨ Welcome to My Little World ✨
+            🐼 Welcome to My Panda World 🎋
         </div>
 
         <h1>
@@ -409,9 +408,11 @@ footer p {
         </h1>
 
         <p>
-            Halo! Terima kasih sudah berkunjung.
-            Website ini dibuat untuk memperkenalkan diri
-            dan menampilkan berbagai kegiatan serta tugas saya. 🌷
+            Halo! Selamat datang di website pribadi saya.
+            Perkenalkan, nama saya Zahratul Hayati.
+            Website ini dibuat untuk memperkenalkan diri,
+            menampilkan berbagai kegiatan, dokumentasi,
+            serta tugas-tugas saya. 🐼
         </p>
 
         <a href="#menu" class="btn">
@@ -419,14 +420,15 @@ footer p {
         </a>
     </div>
 
-    <div class="hero-image">🌸</div>
+    <div class="hero-image">🐼</div>
 </header>
 
 <!-- MENU UTAMA -->
 <section id="menu">
+
     <div class="section-title">
-        <h2>Mari Lihat Website Saya ♡</h2>
-        <p>Yuk, jelajahi berbagai menu yang tersedia!</p>
+        <h2>🐼 Mari Jelajahi Website Saya</h2>
+        <p>Temukan berbagai menu dan kegiatan saya!</p>
     </div>
 
     <div class="menu-grid">
@@ -470,17 +472,17 @@ footer p {
         <a href="tugas1.html" class="menu-card">
             <div class="menu-icon blue">📚</div>
             <h3>Tugas 4</h3>
-            <p>Kumpulan tugas Empat.</p>
+            <p>Kumpulan tugas empat.</p>
         </a>
 
         <a href="tugas1.html" class="menu-card">
-            <div class="menu-icon blue">📚</div>
+            <div class="menu-icon pink">🐼</div>
             <h3>Tugas Akhir</h3>
-            <p>Kumpulan tugas Akhir.</p>
+            <p>Kumpulan tugas akhir.</p>
         </a>
 
         <a href="tugas1.html" class="menu-card">
-            <div class="menu-icon blue">📚</div>
+            <div class="menu-icon purple">📊</div>
             <h3>Data</h3>
             <p>Kumpulan data.</p>
         </a>
@@ -490,12 +492,14 @@ footer p {
 
 <!-- TUGAS 1 -->
 <section class="tugas1" id="tugas1">
+
     <div class="section-title">
-        <h2>♡ Tugas 1 - Google Form ♡</h2>
+        <h2>🐼 Tugas 1 - Google Form</h2>
         <p>Formulir Kepuasan Pengguna Dompet Digital DANA</p>
     </div>
 
     <div class="form-container">
+
         <h3>Formulir Kepuasan Pengguna DANA</h3>
 
         <p class="form-description">
@@ -512,23 +516,27 @@ footer p {
         </iframe>
 
         <div class="form-back">
-            <a href="#menu">♡ Kembali ke Menu</a>
+            <a href="#menu">🐼 Kembali ke Menu</a>
         </div>
+
     </div>
 </section>
 
 <!-- TUGAS 2 -->
 <section class="tugas2" id="tugas2">
+
     <div class="section-title">
-        <h2>♡ Tugas 2 - Google Sheets ♡</h2>
+        <h2>🐼 Tugas 2 - Google Sheets</h2>
         <p>Tampilan data dari Google Sheets</p>
     </div>
 
     <div class="form-container">
+
         <h3>Data Tugas 2</h3>
 
         <p class="form-description">
-            Berikut adalah tampilan data yang terhubung dari Google Sheets. ♡
+            Berikut adalah tampilan data yang terhubung
+            dari Google Sheets. ♡
         </p>
 
         <iframe
@@ -539,8 +547,9 @@ footer p {
         </iframe>
 
         <div class="form-back">
-            <a href="#menu">♡ Kembali ke Menu</a>
+            <a href="#menu">🐼 Kembali ke Menu</a>
         </div>
+
     </div>
 </section>
 
@@ -548,18 +557,18 @@ footer p {
 <section class="tugas3" id="tugas3">
 
     <div class="section-title">
-        <h2>♡ Tugas 3 ♡</h2>
+        <h2>🐼 Tugas 3</h2>
         <p>Google Form, Google Sheets, dan Looker Studio</p>
     </div>
 
-    <!-- GOOGLE FORM TUGAS 3 -->
+    <!-- GOOGLE FORM -->
     <div class="form-container">
 
         <h3>📝 Google Form Tugas 3</h3>
 
         <p class="form-description">
             Silakan isi formulir berikut sesuai petunjuk
-            yang tersedia. Terima kasih sudah berpartisipasi! ♡
+            yang tersedia. Terima kasih sudah berpartisipasi!
         </p>
 
         <iframe
@@ -573,7 +582,7 @@ footer p {
 
     <br><br>
 
-    <!-- GOOGLE SHEETS TUGAS 3 -->
+    <!-- GOOGLE SHEETS -->
     <div class="form-container">
 
         <h3>📊 Google Sheets Tugas 3</h3>
@@ -601,7 +610,7 @@ footer p {
 
     <br><br>
 
-    <!-- LOOKER STUDIO TUGAS 3 -->
+    <!-- LOOKER STUDIO -->
     <div class="form-container">
 
         <h3>📈 Dashboard Tugas 3 - Looker Studio</h3>
@@ -631,38 +640,48 @@ footer p {
     </div>
 
     <div class="form-back">
-        <a href="#menu">♡ Kembali ke Menu</a>
+        <a href="#menu">🐼 Kembali ke Menu</a>
     </div>
 
 </section>
 
 <!-- TENTANG WEBSITE -->
 <section class="about" id="about">
+
     <div class="section-title">
-        <h2>A Little About This Website 🌷</h2>
+        <h2>🐼 About Me</h2>
         <p>My Personal Website</p>
     </div>
 
     <div class="about-box">
-        <h3>♡ Selamat datang di situs web saya ♡</h3>
+
+        <h3>♡ Selamat Datang di Website Zahratul Hayati ♡</h3>
 
         <p>
+            Halo semuanya! Nama saya Zahratul Hayati.
             Website ini dibuat sebagai media untuk
-            memperkenalkan diri, serta menampilkan
-            berbagai hasil tugas dan dokumentasi pribadi.
+            memperkenalkan diri, menampilkan berbagai
+            hasil tugas, kegiatan, dan dokumentasi pribadi.
         </p>
 
         <br>
 
-        <h2>Terima kasih telah mengunjungi website ini! 💗</h2>
+        <h2>Terima Kasih Sudah Berkunjung! 🐼</h2>
+
+        <p>
+            Keep Growing, Keep Shining! 🎋
+        </p>
+
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <p>♡ Website Zahratul Hayati ♡</p>
-    <p>Made with Love 🌸</p>
-    <p>Keep Growing, Keep Shining! ✨</p>
+
+    <p>🐼 Website Zahratul Hayati 🐼</p>
+    <p>Made with Love ♡</p>
+    <p>Keep Growing, Keep Shining! 🎋</p>
+
 </footer>
 
 </body>
