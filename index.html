@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biodata Saya - Panda Little World</title>
+<title>Foto Biodata - Panda Little World</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -17,14 +17,13 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background: #f7f8ef;
+    background: #f0f5e9;
     color: #405743;
 }
 
-/* NAVBAR */
 .navbar {
     background: white;
-    padding: 20px 8%;
+    padding: 18px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,15 +41,13 @@ body {
     font-weight: 800;
 }
 
-/* JUDUL */
 .header {
     text-align: center;
-    padding: 45px 20px 20px;
+    padding: 40px 20px;
 }
 
 .header h1 {
-    font-size: 35px;
-    color: #405743;
+    font-size: 32px;
 }
 
 .header p {
@@ -58,10 +55,9 @@ body {
     margin-top: 8px;
 }
 
-/* BIODATA */
 .biodata-container {
-    max-width: 850px;
-    margin: 25px auto 60px;
+    max-width: 750px;
+    margin: 0 auto 50px;
     padding: 35px;
     background: white;
     border-radius: 30px;
@@ -69,14 +65,13 @@ body {
     text-align: center;
 }
 
-/* FOTO */
 .foto-box {
-    width: 190px;
-    height: 190px;
-    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+    margin: auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 7px solid #dce8d6;
+    border: 8px solid #dce8d6;
     background: #edf3e8;
 }
 
@@ -88,37 +83,34 @@ body {
 
 .upload-btn {
     display: inline-block;
-    padding: 10px 22px;
+    padding: 11px 25px;
     background: #526b55;
     color: white;
     border-radius: 25px;
     cursor: pointer;
     font-weight: 800;
-    margin-bottom: 25px;
+    margin: 20px 0;
 }
 
 .upload-btn:hover {
-    background: #405743;
+    background: #35483a;
 }
 
 #uploadFoto {
     display: none;
 }
 
-/* NAMA */
 .nama {
-    font-size: 27px;
+    font-size: 28px;
     font-weight: 900;
-    color: #405743;
-    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .julukan {
     color: #98a995;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-/* DATA */
 .data-box {
     background: #f5f8f1;
     padding: 25px;
@@ -138,15 +130,14 @@ body {
 }
 
 .data-item strong {
-    width: 180px;
-    color: #526b55;
+    width: 190px;
+    flex-shrink: 0;
 }
 
 .data-item span {
     color: #788578;
 }
 
-/* MOTTO */
 .motto {
     margin-top: 25px;
     padding: 22px;
@@ -156,7 +147,6 @@ body {
     line-height: 1.8;
 }
 
-/* FOOTER */
 footer {
     background: #35483a;
     color: white;
@@ -165,7 +155,6 @@ footer {
     font-weight: 800;
 }
 
-/* RESPONSIVE */
 @media(max-width:600px) {
     .navbar {
         flex-direction: column;
@@ -173,13 +162,13 @@ footer {
     }
 
     .biodata-container {
-        margin: 20px 15px 40px;
+        margin: 15px;
         padding: 22px;
     }
 
     .data-item {
         flex-direction: column;
-        gap: 4px;
+        gap: 5px;
     }
 
     .data-item strong {
@@ -187,7 +176,7 @@ footer {
     }
 
     .header h1 {
-        font-size: 28px;
+        font-size: 27px;
     }
 }
 </style>
@@ -195,22 +184,18 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">🐼 Panda Little World</div>
     <a href="index.html">← Kembali ke Home</a>
 </nav>
 
-<!-- JUDUL -->
 <div class="header">
-    <h1>🌷 Biodata Diri 🌷</h1>
+    <h1>🌷 Foto Biodata Diri 🌷</h1>
     <p>Kenali saya lebih dekat!</p>
 </div>
 
-<!-- BIODATA -->
 <div class="biodata-container">
 
-    <!-- FOTO PROFIL -->
     <div class="foto-box">
         <img id="fotoProfil"
         src="https://placehold.co/300x300/e9f0e2/526b55?text=Foto+Saya"
@@ -223,11 +208,9 @@ footer {
 
     <input type="file" id="uploadFoto" accept="image/*">
 
-    <!-- NAMA -->
     <h2 class="nama">Nama Lengkap Kamu</h2>
     <p class="julukan">🌸 Welcome to My Personal Profile 🌸</p>
 
-    <!-- DATA DIRI -->
     <div class="data-box">
 
         <div class="data-item">
@@ -261,13 +244,12 @@ footer {
         </div>
 
         <div class="data-item">
-            <strong>📞 Cita-cita</strong>
+            <strong>🌟 Cita-cita</strong>
             <span>Isi cita-cita kamu</span>
         </div>
 
     </div>
 
-    <!-- MOTTO -->
     <div class="motto">
         🐼 "Jangan pernah berhenti bermimpi,
         teruslah belajar dan menjadi versi terbaik
@@ -276,21 +258,21 @@ footer {
 
 </div>
 
-<!-- FOOTER -->
 <footer>
     <p>🐼 Panda Little World 🐼</p>
     <p>Made with Love 💚🎋</p>
 </footer>
 
-<!-- JAVASCRIPT FOTO -->
 <script>
 const uploadFoto = document.getElementById("uploadFoto");
 const fotoProfil = document.getElementById("fotoProfil");
 
 uploadFoto.addEventListener("change", function(event) {
+
     const file = event.target.files[0];
 
     if (file && file.type.startsWith("image/")) {
+
         const reader = new FileReader();
 
         reader.onload = function(e) {
@@ -299,6 +281,7 @@ uploadFoto.addEventListener("change", function(event) {
 
         reader.readAsDataURL(file);
     }
+
 });
 </script>
 
